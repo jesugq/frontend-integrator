@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import logo from '../logo.svg';
 import classnames from "classnames"
 
 class NavigationBar extends Component {
@@ -37,6 +39,17 @@ class NavigationBar extends Component {
     render() {
         return (
             <div>
+                <Navbar bg="primary" variant="dark">
+                    <NavbarBrand href="#home">
+                        <img
+                            className="d-inline-block align-top"
+                            src={logo}
+                            width="30"
+                            height="30"
+                            alt="React Bootstrap Logo"
+                        />
+                    </NavbarBrand>
+                </Navbar>
             </div>
         );
     }
