@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import logo from '../logo.svg';
-import classnames from "classnames"
 
 class NavigationBar extends Component {
     // State holds the vertical position of the website for usage in hiding.
-    constructor() {
+    constructor(props) {
         super(props);
 
         this.state = {
