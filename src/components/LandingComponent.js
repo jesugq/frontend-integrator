@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavigationBar from './NavigationBarComponent';
 
 class Landing extends Component {
     /* Calls upon the other eight components of the landing page.
@@ -15,6 +16,7 @@ class Landing extends Component {
     render (){
         return(
             <div>
+                <NavigationBar />
             </div>
         );
     }
