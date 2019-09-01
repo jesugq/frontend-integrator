@@ -40,7 +40,7 @@ class NavigationBar extends Component {
     // The Navigation Bar disappears when scrolling downwards and viceversa.
     render() {
         return (
-            <div>
+            <div style={{paddingBottom: 3.75+'em'}}>
                 <Navbar id="navigationbar" style={{position: 'fixed', width: 100+'%', top: 0, transition: 'top '+0.5+'s'}} color="light" light expand="md">
                     <NavbarBrand href="/">
                         <img
