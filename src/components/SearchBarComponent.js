@@ -2,14 +2,34 @@ import React, { Component } from 'react';
 import { Carousel } from 'reactstrap';
 
 class SearchBar extends Component {
-    // State holds the values of the title.
+    // State holds the values of the carousel items.
     constructor(props) {
         super(props);
 
         this.state = {
-            carousel: null
+            carousel: null,
+            activeIndex: 0
         };
+        
+        this.previousSlide = this.previousSlide.bind(this);
+        this.nextSlide     = this.nextSlide.bind(this);
+        this.enteringSlide = this.enteringSlide.bind(this);
+        this.enteredSlide  = this.enteredSlide.bind(this);
     }
+
+    // Carousel Animation Handlers
+    previousSlide() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === 0? items.length-1 : this.state.activeIndex
+        this.setState({activeIndex: nextIndex});
+    }
+    nextSlide() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === items.length-1 ? 0 : this.state.activeIndex
+        this.setState({activeIndex: nextIndex});
+    }
+    enteringSlide() {this.animating = true;}
+    enteredSlide()  {this.animating = false;}
 
     // Fetch the information required for display.
     componentDidMount() {
