@@ -28,10 +28,7 @@ class NavigationBar extends Component {
         const currentOffset = window.pageYOffset;
         const visible       = previousOffset > currentOffset;
 
-        this.setState({
-            previousOffset: currentOffset,
-            visible
-        });
+        this.setState({previousOffset: currentOffset, visible});
 
         if (visible) {
             document.getElementById("navigationbar").style.top = "0";
