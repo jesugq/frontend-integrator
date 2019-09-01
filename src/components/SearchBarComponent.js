@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators, CarouselCaption, CarouselControl } from 'reactstrap';
+import './SearchBarComponent.css'
 
 class SearchBar extends Component {
     // State holds the values of the carousel items.
@@ -54,7 +55,7 @@ class SearchBar extends Component {
         const slides = this.state.items.map((item) => {
             return (
                 <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.id}>
-                    <img style={{height: 40+'em', display: 'block', marginLeft: 'auto', marginRight: 'auto'}} src={item.src} alt={item.altText} />
+                    <img className="carouselImage" src={item.src} alt={item.altText} />
                     <CarouselCaption captionHeader={item.caption} />
                 </CarouselItem>
             );
@@ -68,7 +69,7 @@ class SearchBar extends Component {
         const slides = this.renderSlides();
 
         return (
-            <div style={{backgroundColor: '#DDD'}}>
+            <div className="carouselBackground">
             <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
                 <CarouselIndicators items={this.state.items} activeIndex={activeIndex} onClickHandler={this.goIndex} />
                 {slides}
