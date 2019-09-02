@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import './NavigationBarComponent.css'
 import logo from '../logo.svg';
 
 class NavigationBar extends Component {
@@ -28,10 +29,7 @@ class NavigationBar extends Component {
         const currentOffset = window.pageYOffset;
         const visible       = previousOffset > currentOffset;
 
-        this.setState({
-            previousOffset: currentOffset,
-            visible
-        });
+        this.setState({previousOffset: currentOffset, visible});
 
         if (visible) {
             document.getElementById("navigationbar").style.top = "0";
@@ -43,8 +41,8 @@ class NavigationBar extends Component {
     // The Navigation Bar disappears when scrolling downwards and viceversa.
     render() {
         return (
-            <div>
-                <Navbar id="navigationbar" style={{position: 'fixed', width: 100+'%', top: 0, transition: 'top '+0.5+'s'}} color="light" light expand="md">
+            <div className="navigationBox">
+                <Navbar id="navigationbar" className="navigationBar" color="light" light expand="md">
                     <NavbarBrand href="/">
                         <img
                             clame="d-inline-block align-top"

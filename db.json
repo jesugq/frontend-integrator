@@ -1,0 +1,25 @@
+{
+    "carousel":
+        [
+
+            {
+                "id": 1,
+                "src": "https://business.stthomas.edu/_media-library/centers-institutes/schulze-school/images/opus-college-business-professor-johnson.jpg",
+                "altText": "Un profesor tutoreando a un alumno.",
+                "caption": "¡Tutores disponibles las 24 horas!"
+                
+            },
+            {
+                "id": 2,
+                "src": "https://www.hillsdale.edu/wp-content/uploads/2016/02/Carrington.jpg",
+                "altText": "Un profesor sonríendo.",
+                "caption": "¡Seguimiento completo para la mejora de tus estudios!"
+            },
+            {
+                "id": 3,
+                "src": "https://www.smu.edu/-/media/Images/News/2019/Fall/JoGuldi-2-1920x1080p.jpg?la=en",
+                "altText": "Una profesora señalando al pizarrón.",
+                "caption": "¡Garantiza tus calificaciones altas!"
+            }
+        ]
+}
