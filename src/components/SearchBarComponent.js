@@ -8,7 +8,14 @@ class SearchBar extends Component {
         super(props);
 
         this.state = {
-            items: [{"id": 0, "src":"Sample", "altText":"Sample", "caption":"Sample"}, {"id": 1, "src":"Sample", "altText":"Sample", "caption":"Sample"}],
+            items: [
+                {
+                    "id": 0,
+                    "src": "http://placehold.it/1920x1080&text=You're%20offline!",
+                    "altText": "You're offline!",
+                    "caption": "Please check your internet connection.",
+                },
+            ],
             activeIndex: 0
         };
         
@@ -56,7 +63,7 @@ class SearchBar extends Component {
             return (
                 <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.id}>
                     <img className="carouselImage" src={item.src} alt={item.altText} />
-                    <CarouselCaption captionHeader={item.caption} />
+                    <CarouselCaption captionHeader={item.caption} captionText="" />
                 </CarouselItem>
             );
         });
