@@ -21,5 +21,30 @@
                 "altText": "Una profesora señalando al pizarrón.",
                 "caption": "¡Garantiza tus calificaciones altas!"
             }
-        ]
+        ],
+    "quality":
+        {
+            "header": "Agenda una asesoría de manera rápida y sencilla.",
+            "first":
+                {
+                    "src": "http://placehold.it/100x100&text=First",
+                    "alt": "First",
+                    "title": "Explora",
+                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                },
+            "second":
+                {
+                    "src": "http://placehold.it/100x100&text=Second",
+                    "alt": "Second",
+                    "title": "Agenda",
+                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                },
+            "third":
+                {
+                    "src": "http://placehold.it/100x100&text=Third",
+                    "alt": "Third",
+                    "title": "Aprende",
+                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                }
+        }
 }
