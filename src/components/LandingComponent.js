@@ -17,7 +17,7 @@ class Landing extends Component {
     render (){
         return(
             <div>
-                <NavigationBar />
+                {/* <NavigationBar /> */}
                 <SearchBar />
             </div>
         );
