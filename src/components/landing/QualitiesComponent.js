@@ -9,11 +9,17 @@ class Qualities extends Component {
 
         this.state = {
             items: {
-                "header": "Agenda una asesoría de manera rápida y sencilla.",
+                "header": "Agenda una llamada al servidor.",
                 "first": {
                     "src": "http://placehold.it/100x100&text=You're%20offline!",
                     "alt": "You're offline!",
-                    "title": "Explora",
+                    "title": "Llamada",
+                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                },
+                "second": {
+                    "src": "http://placehold.it/100x100&text=You're%20offline!",
+                    "alt": "You're offline!",
+                    "title": "Respuesta",
                     "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
                 }
             }
