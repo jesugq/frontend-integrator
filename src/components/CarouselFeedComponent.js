@@ -62,8 +62,8 @@ class CarouselFeed extends Component {
         const slides = this.state.items.map((item) => {
             return (
                 <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.id}>
-                    <img className="carouselImage" src={item.src} alt={item.altText} />
-                    <CarouselCaption captionHeader={item.caption} captionText="" />
+                    <img className="img-fluid" src={item.src} alt={item.altText} />
+                    <CarouselCaption className="carousel-caption-box" captionHeader={item.caption} captionText="" />
                 </CarouselItem>
             );
         });
@@ -76,13 +76,13 @@ class CarouselFeed extends Component {
         const slides = this.renderSlides();
 
         return (
-            <div className="carouselBackground">
-            <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
-                <CarouselIndicators items={this.state.items} activeIndex={activeIndex} onClickHandler={this.goIndex} />
-                {slides}
-                <CarouselControl direction="prev" directionText="Anterior" onClickHandler={this.previous} />
-                <CarouselControl direction="next" directionText="Siguiente" onClickHandler={this.next} />
-            </Carousel>
+            <div className="carousel-background">
+                <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
+                    <CarouselIndicators items={this.state.items} activeIndex={activeIndex} onClickHandler={this.goIndex} />
+                    {slides}
+                    <CarouselControl direction="prev" directionText="Anterior" onClickHandler={this.previous} />
+                    <CarouselControl direction="next" directionText="Siguiente" onClickHandler={this.next} />
+                </Carousel>
             </div>
         );
     }

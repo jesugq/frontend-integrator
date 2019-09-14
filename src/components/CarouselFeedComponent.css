@@ -1,9 +1,14 @@
-.carouselBackground{
+.carousel-background {
     background: #EEE;
 }
 
-.carouselImage {
-    height: 40em;
+.carousel-caption-box {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1px 30px;
+}
+
+.img-fluid {
+    max-height: 40em;
     display: block;
     margin-left: auto;
     margin-right: auto;
