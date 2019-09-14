@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 import './NavigationBarComponent.css'
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
 class NavigationBar extends Component {
     // State holds the vertical position of the website for usage in hiding.

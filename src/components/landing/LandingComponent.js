@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavigationBar from './NavigationBarComponent';
 import CarouselFeed from './CarouselFeedComponent';
 import Qualities from './QualitiesComponent';
 
@@ -19,7 +18,6 @@ class Landing extends Component {
     render (){
         return(
             <div>
-                <NavigationBar />
                 <CarouselFeed />
                 <Qualities />
             </div>

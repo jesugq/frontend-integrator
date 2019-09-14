@@ -7,4 +7,5 @@
     width: 100%;
     top: 0;
     transition: top 0.5s;
+    z-index: 1000;
 }
