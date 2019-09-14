@@ -11,16 +11,10 @@ class Qualities extends Component {
             items: {
                 "header": "Agenda una llamada al servidor.",
                 "first": {
-                    "src": "http://placehold.it/100x100&text=You're%20offline!",
-                    "alt": "You're offline!",
-                    "title": "Llamada",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
-                },
-                "second": {
-                    "src": "http://placehold.it/100x100&text=You're%20offline!",
-                    "alt": "You're offline!",
-                    "title": "Respuesta",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                    "src": "http://placehold.it/100x100&text=Loading...",
+                    "alt": "Loading...",
+                    "title": "¡Cargando contenido!",
+                    "txt": "Tu información debería llegar pronto."
                 }
             }
         }
