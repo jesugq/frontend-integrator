@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import NavigationBar from './NavigationBarComponent';
-import SearchBar from './SearchBarComponent';
+import CarouselFeed from './CarouselFeedComponent';
 
 class Landing extends Component {
     /* Calls upon the other eight components of the landing page.
         1. Navigation Bar Component
+        3. CarouselFeed Component
         2. Search Bar Component
         3. Qualities Component
         4. Locations Component
@@ -18,7 +19,7 @@ class Landing extends Component {
         return(
             <div>
                 <NavigationBar />
-                <SearchBar />
+                <CarouselFeed />
             </div>
         );
     }

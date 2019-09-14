@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselIndicators, CarouselCaption, CarouselControl } from 'reactstrap';
-import './SearchBarComponent.css'
+import './CarouselFeedComponent.css'
 
-class SearchBar extends Component {
+class CarouselFeed extends Component {
     // State holds the values of the carousel items.
     constructor(props) {
         super(props);
@@ -88,4 +88,4 @@ class SearchBar extends Component {
     }
 }
 
-export default SearchBar;
+export default CarouselFeed;
