@@ -45,7 +45,7 @@ class Qualities extends Component {
 
         return (
             <div className="col-sm">
-                <img src={src} alt={alt}/><br/><br/>
+                <img className="small-img" src={src} alt={alt}/><br/><br/>
                 <h6>{title}</h6>
                 <p>{txt}</p>
             </div>
@@ -62,7 +62,7 @@ class Qualities extends Component {
                     <h1 className="display-4 three-quarters small-display">
                         {items.header}<br/><br/>
                     </h1>
-                    <div className="row half-width">
+                    <div className="row flexible-quarters">
                         {items.first ?  ( this.renderColumn(items.first))   : (<div></div>) }
                         {items.second ? ( this.renderColumn(items.second))  : (<div></div>) }
                         {items.third ?  ( this.renderColumn(items.third))   : (<div></div>) }
