@@ -6,6 +6,6 @@
     position: fixed;
     width: 100%;
     top: 0;
-    transition: top 0.5s;
+    transition: top 0.75s;
     z-index: 1000;
 }

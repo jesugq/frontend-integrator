@@ -34,7 +34,7 @@ class NavigationBar extends Component {
         if (visible) {
             document.getElementById("navigationbar").style.top = "0";
         } else {
-            document.getElementById("navigationbar").style.top = "-50px";
+            document.getElementById("navigationbar").style.top = "-150px";
         }
     }
     
