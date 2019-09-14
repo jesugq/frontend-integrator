@@ -1,7 +1,9 @@
 import React from 'react';
-import Landing from './components/LandingComponent';
-import NavigationBar from './components/NavigationBarComponent';
+import Landing from './components/landing/LandingComponent';
+import NavigationBar from './components/global/NavigationBarComponent';
+import FooterComponent  from './components/global/FooterComponent';
 import logo from './logo.svg';
+import 'mdbreact/dist/css/mdb.css'
 import './App.css';
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
     <div>
       <NavigationBar />
       <Landing />
+      <FooterComponent />
     </div>
   );
 }

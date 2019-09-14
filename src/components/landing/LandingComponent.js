@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavigationBar from './NavigationBarComponent';
 import SearchBar from './SearchBarComponent';
 
 class Landing extends Component {
