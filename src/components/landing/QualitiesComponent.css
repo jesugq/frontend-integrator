@@ -12,15 +12,27 @@
 }
 
 .flexible-quarters {
-    width: 50%
+    width: 60%;
+    -webkit-transition: width 1s ease;  				
+    -moz-transition: width 1s ease;  				
+    -o-transition: width 1s ease;  				
+    transition: width 1s ease;
 }
-@media(max-width: 1200px){
+@media(max-width: 1500px){
     .flexible-quarters {
-        width: 75%;
+        width: 80%;
+        -webkit-transition: width 1s ease;  				
+        -moz-transition: width 1s ease;  				
+        -o-transition: width 1s ease;  				
+        transition: width 1s ease;
     }
 }
-@media(max-width: 1000px){
+@media(max-width: 1250px){
     .flexible-quarters {
         width: 100%;
+        -webkit-transition: width 1s ease;  				
+        -moz-transition: width 1s ease;  				
+        -o-transition: width 1s ease;  				
+        transition: width 1s ease;
     }
 }
