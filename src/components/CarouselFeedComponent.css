@@ -1,5 +1,5 @@
 .carousel-background {
-    background: #EEE;
+    background-color: #f8f9fa;
 }
 
 .carousel-caption-box {
@@ -12,4 +12,5 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 1px 80px;
 }
