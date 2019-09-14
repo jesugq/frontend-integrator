@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 import './NavigationBarComponent.css'
-import logo from '../../logo.svg';
+import logo from '../../aerobot.png';
 
 class NavigationBar extends Component {
     // State holds the vertical position of the website for usage in hiding.
@@ -34,7 +34,7 @@ class NavigationBar extends Component {
         if (visible) {
             document.getElementById("navigationbar").style.top = "0";
         } else {
-            document.getElementById("navigationbar").style.top = "-150px";
+            document.getElementById("navigationbar").style.top = "-200px";
         }
     }
     
@@ -45,10 +45,10 @@ class NavigationBar extends Component {
                 <Navbar id="navigationbar" className="navigationBar" color="light" light expand="md">
                     <NavbarBrand href="/">
                         <img
-                            clame="d-inline-block align-top"
+                            clame="d-inline-block align-top aerobot-logo"
                             src={logo}
-                            width="30"
-                            height="30"
+                            width="50"
+                            height="50"
                             alt="React Bootstrap Logo"
                         />
                     </NavbarBrand>
