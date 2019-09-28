@@ -8,6 +8,7 @@ import './App.css';
 function App() {
   return (
     <div>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       <NavigationBar />
       <Landing />
       <FooterComponent />
