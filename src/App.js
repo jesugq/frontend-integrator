@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginComponent from './components/global/LoginComponent';
 import Landing from './components/landing/LandingComponent';
 import NavigationBar from './components/global/NavigationBarComponent';
 import FooterComponent  from './components/global/FooterComponent';
@@ -9,7 +10,7 @@ function App() {
   return (
     <div>
       <NavigationBar />
-      <Landing />
+      <LoginComponent />
       <FooterComponent />
     </div>
   );
