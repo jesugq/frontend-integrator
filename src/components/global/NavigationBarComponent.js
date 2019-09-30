@@ -7,11 +7,12 @@ class NavigationBar extends Component {
     // State holds the vertical position of the website for usage in hiding.
     constructor(props) {
         super(props);
-
         this.state = {
             previousOffset: window.pageYOffset,
             visible: true
         }
+        
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     // Adds and Removes the Scroll Event Listener.
@@ -24,10 +25,10 @@ class NavigationBar extends Component {
     }
 
     // Handles Scroll Action for usage in hiding.
-    handleScroll = () => {
+    handleScroll() {
         const { previousOffset } = this.state;
         const currentOffset = window.pageYOffset;
-        const visible       = previousOffset > currentOffset;
+        const visible = previousOffset > currentOffset;
 
         this.setState({previousOffset: currentOffset, visible});
 
@@ -44,13 +45,7 @@ class NavigationBar extends Component {
             <div className="navigationBox">
                 <Navbar id="navigationbar" className="navigationBar" color="light" light expand="md">
                     <NavbarBrand href="/">
-                        <img
-                            clame="d-inline-block align-top aerobot-logo"
-                            src={logo}
-                            width="50"
-                            height="50"
-                            alt="React Bootstrap Logo"
-                        />
+                        <img src={logo} width="50" height="50" alt="React Bootstrap Logo"/>
                     </NavbarBrand>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
