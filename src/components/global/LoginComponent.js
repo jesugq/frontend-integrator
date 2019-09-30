@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Col, Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Login.css";
+import "./LoginComponent.css";
 
 class LoginComponent extends Component {
     constructor(props) {
@@ -46,11 +46,11 @@ class LoginComponent extends Component {
       const { email, password } = this.state;
       return (
         <Container className="Login">
-          <h2>Sign In</h2>
+          <h2>Iniciar Sesión</h2>
           <Form className="form" onSubmit={ (e) => this.submitForm(e) }>
             <Col>
               <FormGroup>
-                <Label>Username</Label>
+                <Label>Correo Electronico</Label>
                 <Input
                   type="email"
                   name="email"
@@ -65,14 +65,13 @@ class LoginComponent extends Component {
                             } }
                 />
                 <FormFeedback>
-                  Please input a correct email.
+                  Por favor ingresa un email válido.
                 </FormFeedback>
-                <FormText>Your username is most likely your email.</FormText>
               </FormGroup>
             </Col>
             <Col>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
+                <Label for="examplePassword">Contraseña</Label>
                 <Input
                   type="password"
                   name="password"
@@ -83,7 +82,7 @@ class LoginComponent extends Component {
               />
               </FormGroup>
             </Col>
-            <Button>Submit</Button>
+            <Button>Ingresar</Button>
         </Form>
         </Container>
       );

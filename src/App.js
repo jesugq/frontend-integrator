@@ -1,4 +1,5 @@
 import React from 'react';
+import SignUpComponent from './components/global/SignUpComponent';
 import LoginComponent from './components/global/LoginComponent';
 import Landing from './components/landing/LandingComponent';
 import NavigationBar from './components/global/NavigationBarComponent';
@@ -10,7 +11,7 @@ function App() {
   return (
     <div>
       <NavigationBar />
-      <LoginComponent />
+      <SignUpComponent />
       <FooterComponent />
     </div>
   );

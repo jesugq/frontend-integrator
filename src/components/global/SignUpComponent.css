@@ -1,25 +1,4 @@
-/*@media /*all and (min-width: 480px) {
-    .Login {
-        padding: 60px 0;
-    }
-
-    .Login form {
-        margin: 0 auto;
-        max-width: 320px;
-    }
-}
-
-.Login {
-    padding: 60px 0;
-}
-
-.Login form {
-    margin: 0 auto;
-    max-width: 320px;
-}*/
-
-
-.Login {
+.SignUp {
     text-align: left;
     padding: 1em;
     margin: 1em;
@@ -45,15 +24,15 @@
     justify-content: flex-end;
   }
   
-  .Login-title {
+  .SignUp-title {
     font-size: 1.5em;
   }
   
-  .Login-intro {
+  .SignUp-intro {
     font-size: large;
   }
   
-  @keyframes Login-logo-spin {
+  @keyframes SignUp-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
