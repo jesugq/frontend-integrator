@@ -11,8 +11,8 @@ class CarouselFeed extends Component {
             items: [
                 {
                     "id": 0,
-                    "src": "http://placehold.it/1920x1080&text=You're%20offline!",
-                    "altText": "You're offline!",
+                    "src": "http://placehold.it/1920x1080&text=Loading...",
+                    "altText": "Loading...",
                     "caption": "Please check your internet connection.",
                 },
             ],

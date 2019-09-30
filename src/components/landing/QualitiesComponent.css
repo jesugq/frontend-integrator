@@ -2,10 +2,37 @@
     width: 75%;
 }
 
-.half-width {
-    width: 50%;
-}
-
 .small-display {
     font-size: 2.25rem;
+}
+
+.small-img {
+    width: 75px;
+    height: 75px;
+}
+
+.flexible-quarters {
+    width: 60%;
+    -webkit-transition: width 1s ease;  				
+    -moz-transition: width 1s ease;  				
+    -o-transition: width 1s ease;  				
+    transition: width 1s ease;
+}
+@media(max-width: 1500px){
+    .flexible-quarters {
+        width: 80%;
+        -webkit-transition: width 1s ease;  				
+        -moz-transition: width 1s ease;  				
+        -o-transition: width 1s ease;  				
+        transition: width 1s ease;
+    }
+}
+@media(max-width: 1250px){
+    .flexible-quarters {
+        width: 100%;
+        -webkit-transition: width 1s ease;  				
+        -moz-transition: width 1s ease;  				
+        -o-transition: width 1s ease;  				
+        transition: width 1s ease;
+    }
 }

@@ -27,24 +27,24 @@
             "header": "Agenda una asesoría de manera rápida y sencilla.",
             "first":
                 {
-                    "src": "http://placehold.it/100x100&text=First",
-                    "alt": "First",
+                    "src": "https://image.flaticon.com/icons/svg/149/149852.svg",
+                    "alt": "Explora",
                     "title": "Explora",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                    "txt": "¡Descubre los profesores que tenemos para tí! Sólo contratamos a lo mejor de lo mejor."
                 },
             "second":
                 {
-                    "src": "http://placehold.it/100x100&text=Second",
-                    "alt": "Second",
+                    "src": "https://image.flaticon.com/icons/svg/747/747310.svg",
+                    "alt": "Agenda",
                     "title": "Agenda",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                    "txt": "¡Planea tu semana de aprendizaje con nuestro sistema innovador!"
                 },
             "third":
                 {
-                    "src": "http://placehold.it/100x100&text=Third",
-                    "alt": "Third",
+                    "src": "https://image.flaticon.com/icons/svg/10/10522.svg",
+                    "alt": "Aprende",
                     "title": "Aprende",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                    "txt": "¡Disfruta de los temas que tenemos para tí! Programación, Matemáticas, Servidores, ¡Y muchos más!"
                 }
         }
 }

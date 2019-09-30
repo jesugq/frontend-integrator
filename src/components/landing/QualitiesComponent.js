@@ -9,12 +9,12 @@ class Qualities extends Component {
 
         this.state = {
             items: {
-                "header": "Agenda una asesoría de manera rápida y sencilla.",
+                "header": "Agenda una llamada al servidor.",
                 "first": {
-                    "src": "http://placehold.it/100x100&text=You're%20offline!",
-                    "alt": "You're offline!",
-                    "title": "Explora",
-                    "txt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in gravida lorem."
+                    "src": "http://placehold.it/100x100&text=Loading...",
+                    "alt": "Loading...",
+                    "title": "¡Cargando contenido!",
+                    "txt": "Tu información debería llegar pronto."
                 }
             }
         }
@@ -39,7 +39,7 @@ class Qualities extends Component {
 
         return (
             <div className="col-sm">
-                <img src={src} alt={alt}/><br/><br/>
+                <img className="small-img" src={src} alt={alt}/><br/><br/>
                 <h6>{title}</h6>
                 <p>{txt}</p>
             </div>
@@ -56,7 +56,7 @@ class Qualities extends Component {
                     <h1 className="display-4 three-quarters small-display">
                         {items.header}<br/><br/>
                     </h1>
-                    <div className="row half-width">
+                    <div className="row flexible-quarters">
                         {items.first ?  ( this.renderColumn(items.first))   : (<div></div>) }
                         {items.second ? ( this.renderColumn(items.second))  : (<div></div>) }
                         {items.third ?  ( this.renderColumn(items.third))   : (<div></div>) }
