@@ -27,8 +27,8 @@ class SearchBar extends Component {
         return(
             <div className="search-bar">
                 <form onSubmit={this.submitSearch}>
-                    <div class="table">
-                        <div class="table-cell">
+                    <div className="table">
+                        <div className="table-cell">
                             <input
                                 type="text"
                                 placeholder="Búsqueda de materias..."
@@ -37,7 +37,7 @@ class SearchBar extends Component {
                                 required
                             />
                         </div>
-                        <div class="table-cell">
+                        <div className="table-cell">
                             <button type="submit" >
                                 <Search fontSize="large"/>
                             </button>
