@@ -1,0 +1,32 @@
+/* Replaces default values in Slick. */
+.slick-slide {
+    object-fit: cover;
+    object-position: 0% 40%;
+    margin: 0 auto;
+
+    width: 100%;
+    height: auto;
+}
+.slick-slide img {
+    object-fit: cover;
+    object-position: 70% 27.5%;
+    margin: 0 auto;
+
+    width: 100%;
+    height: 400px;
+}
+
+/* Creates media width handling. */
+.flexible-quarters {
+    width: 60%;
+}
+@media(max-width: 1500px){
+    .flexible-quarters {
+        width: 80%;
+    }
+}
+@media(max-width: 1000px){
+    .flexible-quarters {
+        width: 100%;
+    }
+}

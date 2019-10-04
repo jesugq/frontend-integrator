@@ -1,15 +1,13 @@
 import React from 'react';
-import NavigationBar from './components/global/NavigationBarComponent';
-import FooterComponent  from './components/global/FooterComponent';
+
+import NavigationComponent from './components/global/NavigationComponent';
+
 import 'mdbreact/dist/css/mdb.css'
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <NavigationBar />
-      <FooterComponent />
-    </div>
+    <NavigationComponent />
   );
 }
 
