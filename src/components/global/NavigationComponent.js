@@ -54,7 +54,7 @@ class NavigationComponent extends Component {
     });
   }
 
-  renderHeader(text, styles) {
+  renderHeader(texts, styles) {
     return(
       <Layout.Header style={styles.header}>
         <Menu
@@ -66,16 +66,16 @@ class NavigationComponent extends Component {
             <img src={logo} width="50px" alt="Aerobot"/>
           </Menu.Item>
           <Menu.Item style={styles.left}>
-            <div style={styles.company}>{text.app}</div>
+            <div style={styles.company}>{texts.app}</div>
           </Menu.Item>
           <Menu.Item style={styles.right} key="/">
-            <Link to="/">{text.landing}</Link>
+            <Link to="/">{texts.landing}</Link>
           </Menu.Item>
           <Menu.Item style={styles.right} key="/login">
-            <Link to="/login">{text.login}</Link>
+            <Link to="/login">{texts.login}</Link>
           </Menu.Item>
           <Menu.Item style={styles.right} key="/register">
-            <Link to="/register">{text.register}</Link>
+            <Link to="/register">{texts.register}</Link>
           </Menu.Item>
         </Menu>
       </Layout.Header>
@@ -86,9 +86,9 @@ class NavigationComponent extends Component {
     return(
       <Layout.Content style={styles.content}>
         <Switch>
-          <Route exact path='/' component={LandingComponent} />
-          <Route path='/login' component={LoginComponent} />
-          <Route path='/register' component={SignUpComponent} />
+          <Route exact path='/' component={LandingComponent} lazy />
+          <Route path='/login' component={LoginComponent} lazy />
+          <Route path='/register' component={SignUpComponent} lazy />
           <Route component={NotFoundComponent} />
         </Switch>
       </Layout.Content>
@@ -102,9 +102,9 @@ class NavigationComponent extends Component {
   }
 
   render() {
-    const text = this.createTexts();
+    const texts = this.createTexts();
     const styles = this.createStyles();
-    const header = this.renderHeader(text, styles);
+    const header = this.renderHeader(texts, styles);
     const content = this.renderContent(styles);
     const footer = this.renderFooter();
 
