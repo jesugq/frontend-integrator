@@ -60,7 +60,6 @@ class NavigationComponent extends Component {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['/']}
           style={styles.menu}
         >
           <Menu.Item style={styles.left}>

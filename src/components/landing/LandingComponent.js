@@ -49,7 +49,6 @@ class LandingComponent extends Component {
       <div>
         <CarouselComponent />
         <QualitiesComponent sections={this.state.landing.Sections}/>
-        {/* <ShowcaseComponent topicIds={this.state.ShowcasedTopicsIDs} /> */}
       </div>
     );
   }
