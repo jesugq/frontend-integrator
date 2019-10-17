@@ -16,7 +16,7 @@ export const fetchLanding = async(setStateLanding) => {
 export const mockLanding = function() {
   return {
     _id: 'afakelandingid',
-    LogoImgURL: 'https://www.afakelandingimage.com/url',
+    LogoImgURL: 'http://via.placeholder.com/1920x1080',
     ShowcasedTopicsIDs: [
       'afaketopicid',
     ],
@@ -25,14 +25,14 @@ export const mockLanding = function() {
         Elements: [
           {
             _id: 'afakeelementid',
-            IconImgURL: 'https://www.afakeelementimage.com/url',
+            IconImgURL: 'http://via.placeholder.com/1920x1080',
             ElementTitle: 'afakeelementtitle',
           },
         ],
         _id: 'afakesectionid',
         Title: 'afakesectiontitle',
         Description: 'afakesectiondescription',
-        BackgroundImgURL: 'https://www.afakesectionimage.com/url',
+        BackgroundImgURL: 'http://via.placeholder.com/1920x1080',
       }
     ],
     createdAt: '2019-10-03T20:37:42.753Z',
