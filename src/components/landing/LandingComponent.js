@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { mockLanding, fetchLanding } from '../../services/LandingService';
 import CarouselComponent from './CarouselComponent';
 import QualitiesComponent from './QualitiesComponent';
-// import ShowcaseComponent from './ShowcaseComponent';
+import ShowcaseComponent from './ShowcaseComponent';
 
 class LandingComponent extends Component {
   timer = null;
@@ -50,6 +50,7 @@ class LandingComponent extends Component {
       <div>
         <CarouselComponent />
         <QualitiesComponent />
+        <ShowcaseComponent sections={this.state.landing.Sections} />
       </div>
     );
   }
