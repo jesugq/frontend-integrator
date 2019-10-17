@@ -6,6 +6,7 @@ import QualitiesComponent from './QualitiesComponent';
 // import ShowcaseComponent from './ShowcaseComponent';
 
 class LandingComponent extends Component {
+  timer = null;
 
   constructor(props) {
     super(props);
@@ -30,7 +31,7 @@ class LandingComponent extends Component {
 
   setStateLanding(landing, fetched){
     this.setState({landing, fetched});
-    if (this.state.fetched === false) { this.mountTimer(); }
+    if (!this.state.fetched) { this.mountTimer(); }
     else { this.unmountTimer(); }
   }
   

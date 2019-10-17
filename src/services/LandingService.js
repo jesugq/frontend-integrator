@@ -4,10 +4,11 @@ export const fetchLanding = async(setStateLanding) => {
   fetch(LANDING_URL)
     .then(response => response.json())
     .then(result => {
+      console.log('LandingService Succesful:', result);
       setStateLanding(result, true);
     })
     .catch(error => {
-      console.log(error);
+      console.log('Error found at LandingService:', error);
       setStateLanding(mockLanding(), false);
     });
 }
