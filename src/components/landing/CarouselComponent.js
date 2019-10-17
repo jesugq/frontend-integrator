@@ -9,12 +9,12 @@ class CarouselComponent extends Component {
   createItems() {
     return {
       first: {
-        spanish: '¡Tutores disponibles las 24 horas!',
+        spanish: '¡Tenemos tutores disponibles las 24 horas!',
         src: 'https://business.stthomas.edu/_media-library/centers-institutes/schulze-school/images/opus-college-business-professor-johnson.jpg',
         alt: 'Un profesor dando asesoría a un alumno.',
       },
       second: {
-        spanish: '¡Seguimiento de tus estudios!',
+        spanish: '¡Dale seguimiento a tus estudios!',
         src: 'https://www.hillsdale.edu/wp-content/uploads/2016/02/Carrington.jpg',
         alt: 'Un profesor sonríendo en su trabajo.',
       },
