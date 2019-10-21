@@ -1,32 +1,9 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import { Jumbotron } from 'reactstrap';
+import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import './Landing.css'
 
 class QualitiesComponent extends Component {
-  createItems() {
-    return {
-      header: 'Agenda una asesoría de manera rápida y sencilla.',
-      first: {
-        src: 'https://image.flaticon.com/icons/svg/149/149852.svg',
-        alt: 'Explora',
-        title: 'Explora',
-        txt: '¡Descubre los profesores que tenemos para tí! Sólo contratamos a lo mejor de lo mejor.',
-      },
-      second: {
-        src: 'https://image.flaticon.com/icons/svg/747/747310.svg',
-        alt: 'Agenda',
-        title: 'Agenda',
-        txt: '¡Planea tu semana de aprendizaje con nuestro sistema innovador!',
-      },
-      third: {
-        src: 'https://image.flaticon.com/icons/svg/10/10522.svg',
-        alt: 'Aprende',
-        title: 'Aprende',
-        txt: '¡Disfruta de los temas que tenemos para tí! Programación, Matemáticas, Servidores, ¡Y muchos más!',
-      }
-    };
-  }
-
   createStyles() {
     return {
       header: {
@@ -40,41 +17,62 @@ class QualitiesComponent extends Component {
     }
   }
   
-  renderColumn(place, styles) {
-    const src = place.src;
-    const alt = place.alt;
-    const title = place.title;
-    const txt = place.txt;
-    
-    return (
-      <div className="col-sm">
-        <img src={src} alt={alt} width={styles.image.width} height={styles.image.height}/>
-        <br /><br />
-        <h6>{title}</h6>
-        <p>{txt}</p>
-      </div>
+  renderElements(section) {
+    var elements = [];
+
+    for (const element of section.Elements) {
+      elements.push(
+        <Col key={element._id}>
+          <img src={element.IconImgURL} alt={element.IconImgURL} />
+          <br/><br/>
+          <h6>{element.ElementTitle}</h6>
+        </Col>
       );
     }
+    return elements;
+  }
+
+  renderSections(styles) {
+    var sections = [];
+    var elements = [];
+    var background = null;
+
+    for (const section of this.props.sections) {
+      elements = this.renderElements(section);
+      background = {
+        backgroundImage: "url(" + section.backgroundImage + ")",
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }
+
+      sections.push(
+        <div key={section._id} style={background}>
+          <Jumbotron>
+            <Container>
+              <center>
+                <h1 className="display-4" style={styles.header}>{section.Title}</h1>
+                <p>{section.Description}</p>
+                <br/><br/>
+                <Row className="flexible-quarters">
+                    {elements}
+                </Row>
+              </center>
+            </Container>
+          </Jumbotron>
+        </div>
+      );
+    }
+    return sections;
+  }
     
   render() {
-    const items = this.createItems();
     const styles = this.createStyles();
+    const sections = this.renderSections(styles);
     
     return (
       <div>
-      <Jumbotron>
-        <center>
-          <h1 className="display-4" style={styles.header}>
-            {items.header}
-            <br /><br />
-          </h1>
-          <div className="row flexible-quarters">
-            { this.renderColumn(items.first, styles) }
-            { this.renderColumn(items.second, styles) }
-            { this.renderColumn(items.third, styles) }
-          </div>
-        </center>
-      </Jumbotron>
+        {sections}
       </div>
     );
   }

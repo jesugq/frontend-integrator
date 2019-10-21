@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Card, CardHeader, CardContent, Avatar, CardMedia, Typography } from '@material-ui/core';
+import { Card, CardHeader, CardContent, Avatar, CardMedia } from '@material-ui/core';
 
 class ShowcaseComponent extends Component {
 

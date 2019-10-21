@@ -47,7 +47,7 @@ class LandingComponent extends Component {
     return(
       <div>
         <CarouselComponent />
-        <QualitiesComponent />
+        <QualitiesComponent sections={this.state.landing.Sections} />
         <ShowcaseComponent sections={this.state.landing.Sections} />
       </div>
     );
