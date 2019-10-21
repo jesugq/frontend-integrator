@@ -8,7 +8,9 @@ import LoginComponent from './components/registry/LoginComponent';
 
 function App() {
   return (
-    <LoginComponent />
+    <NavigationComponent>
+      <LoginComponent />
+    </NavigationComponent>
   );
 }
 
