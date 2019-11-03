@@ -9,17 +9,17 @@ class CarouselComponent extends Component {
   createItems() {
     return {
       first: {
-        spanish: '¡Tenemos tutores disponibles las 24 horas!',
+        cap: '¡Tenemos tutores disponibles las 24 horas!',
         src: 'https://business.stthomas.edu/_media-library/centers-institutes/schulze-school/images/opus-college-business-professor-johnson.jpg',
         alt: 'Un profesor dando asesoría a un alumno.',
       },
       second: {
-        spanish: '¡Dale seguimiento a tus estudios!',
+        cap: '¡Dale seguimiento a tus estudios!',
         src: 'https://www.hillsdale.edu/wp-content/uploads/2016/02/Carrington.jpg',
         alt: 'Un profesor sonríendo en su trabajo.',
       },
       third: {
-        spanish: '¡Garantiza tus calificaciones altas!',
+        cap: '¡Garantiza tus calificaciones altas!',
         src: 'https://www.smu.edu/-/media/Images/News/2019/Fall/JoGuldi-2-1920x1080p.jpg?la=en',
         alt: 'Una profesora señalando al pizarrón.',
       },
@@ -79,15 +79,15 @@ class CarouselComponent extends Component {
         <Slider {...settings}>
           <div>
             <img src={items.first.src} alt={items.first.alt} /><br/>
-            <div style={styles.caption}>{items.first.spanish}</div>
+            <div style={styles.caption}>{items.first.cap}</div>
           </div>
           <div>
             <img src={items.second.src} alt={items.second.alt} /><br/>
-            <div style={styles.caption}>{items.second.spanish}</div>
+            <div style={styles.caption}>{items.second.cap}</div>
           </div>
           <div>
             <img src={items.third.src} alt={items.third.alt} /><br/>
-            <div style={styles.caption}>{items.third.spanish}</div>
+            <div style={styles.caption}>{items.third.cap}</div>
           </div>
         </Slider>
       </div>
