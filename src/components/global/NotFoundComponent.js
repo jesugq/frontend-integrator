@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class NotFoundComponent extends Component {
   createTexts() {
     return({
-      spanish: {
-        notFound: 'Página no encontrada!'
-      },
+      notFound: 'Página no encontrada!'
     });
   }
 
@@ -23,12 +21,12 @@ class NotFoundComponent extends Component {
   
   
   render() {
-    const text = this.createTexts().spanish;
+    const texts = this.createTexts();
     const styles = this.createStyles();
   
     return(
       <div style={styles.single}>
-        {text.notFound}
+        {texts.notFound}
       </div>
     );
   }
