@@ -15,7 +15,7 @@ npm run start
 ```
 
 ## Documentation
-Further instructions and documentation will be added in following updates to the project.
+* Frontend development's [Trello].
 
 <!-- Links -->
 [nvm]: https://github.com/nvm-sh/nvm
@@ -23,3 +23,4 @@ Further instructions and documentation will be added in following updates to the
 [Reactstrap]: https://reactstrap.github.io
 [Material-UI]: https://material-ui.com
 [Ant Design]: https://ant.design
+[Trello]: https://trello.com/b/uNJNU3Li/frontend-integrator
