@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 
 import { Card, CardHeader, CardContent, Avatar, CardMedia } from '@material-ui/core';
@@ -39,64 +40,46 @@ class ShowcaseComponent extends Component {
     };
   }
 
-  renderSections(texts, styles) {
+  renderTopics(texts, styles) {
     var index = 0;
-    var sections = [];
-    var elements = [];
+    var topics = [];
     
-    // eslint-disable-next-line
-    for (const section of this.props.sections) {
+    for (const topic of this.props.topics) {
       index ++;
 
-      // eslint-disable-next-line
-      elements = [];
-      for (const element of section.Elements) {
-        elements.push(
-          <div key={element._id}>
-            <img src={element.IconImgURL} alt={texts.icon} style={styles.image}/>
-            {element.ElementTitle}
-          </div>
-        );
-      }
-
-      sections.push(
-        <div style={styles.container} key={section._id}>
+      topics.push(
+        <div style={styles.container} key={topic._id}>
           <Card style={styles.card}>
             <CardHeader
               avatar={
-                <Avatar aria-label="Section" style={styles.avatar}>
+                <Avatar aria-label="section" style={styles.avatar}>
                   <div style={styles.index}>
                     {index}
                   </div>
                 </Avatar>
               }
-              title={section.Title}
+              title={topic.Field}
               subheader={texts.app}
             />
-            <CardMedia
-              style={styles.media}
-              image={section.BackgroundImgURL}
-              title={texts.section}
-            />
             <CardContent>
-              {elements}
+              <h4>{topic.Name}</h4>
             </CardContent>
           </Card>
         </div>
         );
       }
     
-    return sections;
+    return topics;
   }
     
   render() {
     const texts = this.createTexts();
     const styles = this.createStyles();
-    const sections = this.renderSections(texts, styles);
+    const topics = this.renderTopics(texts, styles);
     
     return (
       <div>
-        {sections}
+        {topics}
       </div>
     );
   }

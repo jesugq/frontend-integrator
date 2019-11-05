@@ -46,9 +46,9 @@ class LandingComponent extends Component {
   render (){
     return(
       <div>
-        <CarouselComponent />
+        <CarouselComponent carousel={this.state.landing.Carrousel} />
         <QualitiesComponent sections={this.state.landing.Sections} />
-        <ShowcaseComponent sections={this.state.landing.Sections} />
+        <ShowcaseComponent topics={this.state.landing.ShowcasedTopicsIDs} />
       </div>
     );
   }

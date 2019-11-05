@@ -17,8 +17,25 @@ export const mockLanding = function() {
   return {
     _id: 'afakelandingid',
     LogoImgURL: 'http://via.placeholder.com/1920x1080',
+    Carrousel: [
+      'http://via.placeholder.com/1920x1080',
+      'http://via.placeholder.com/1920x1080',
+    ],
     ShowcasedTopicsIDs: [
-      'afaketopicid',
+      {
+        _id: 'afakeshowcasedtopicsid0',
+        Field: 'Matemáticas',
+        Name: 'Álgebra Lineal',
+        createdAt: '2019-10-03T20:37:42.753Z',
+        updatedAt: '2019-10-03T20:37:42.753Z',
+      },
+      {
+        _id: 'afakeshowcasedtopicsid1',
+        Field: 'Matemáticas',
+        Name: 'Cálculo Vectorial',
+        createdAt: '2019-10-03T20:37:42.753Z',
+        updatedAt: '2019-10-03T20:37:42.753Z',
+      },
     ],
     Sections: [
       {
