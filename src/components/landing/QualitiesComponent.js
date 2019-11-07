@@ -15,24 +15,23 @@ class QualitiesComponent extends Component {
         padding: '1rem 1rem',
       },
       header: {
-        width: '75%',
         fontSize: '28px',
       },
       image: {
-        width: '75px',
-        height: '75px',
+        width: '120px',
+        height: '120px',
       }
     }
   }
   
-  renderElements(section) {
+  renderElements(section, styles) {
     var elements = [];
 
     for (const element of section.Elements) {
       elements.push(
         <Grid item key={element._id}>
-          <img src={element.IconImgURL} alt={element.IconImgURL} />
-          <br/><br/>
+          <img src={element.IconImgURL} alt={element.IconImgURL} width={styles.image.width} height={styles.image.height}/>
+          <br/><br />
           <h6>{element.ElementTitle}</h6>
         </Grid>
       );
@@ -46,7 +45,7 @@ class QualitiesComponent extends Component {
     var background = null;
 
     for (const section of this.props.sections) {
-      elements = this.renderElements(section);
+      elements = this.renderElements(section, styles);
       background = {
         backgroundImage: "url(" + section.backgroundImage + ")",
         backgroundPosition: 'center',
