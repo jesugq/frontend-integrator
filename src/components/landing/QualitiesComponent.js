@@ -1,11 +1,19 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
+import { Grid } from '@material-ui/core';
 import './Landing.css'
 
 class QualitiesComponent extends Component {
   createStyles() {
     return {
+      root: {
+        flexGrow: 1,
+      },
+      jumbo: {
+        margin: '20px 10%',
+        padding: '1rem 1rem',
+      },
       header: {
         width: '75%',
         fontSize: '28px',
@@ -22,11 +30,11 @@ class QualitiesComponent extends Component {
 
     for (const element of section.Elements) {
       elements.push(
-        <Col key={element._id}>
+        <Grid item key={element._id}>
           <img src={element.IconImgURL} alt={element.IconImgURL} />
           <br/><br/>
           <h6>{element.ElementTitle}</h6>
-        </Col>
+        </Grid>
       );
     }
     return elements;
@@ -48,15 +56,14 @@ class QualitiesComponent extends Component {
 
       sections.push(
         <div key={section._id} style={background}>
-          <Jumbotron>
+          <Jumbotron style={styles.jumbo}>
             <Container>
               <center>
                 <h1 className="display-4" style={styles.header}>{section.Title}</h1>
                 <p>{section.Description}</p>
-                <br/><br/>
-                <Row className="flexible-quarters">
+                <Grid container style={styles.root} spacing={2} justify='center'>
                     {elements}
-                </Row>
+                </Grid>
               </center>
             </Container>
           </Jumbotron>

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 
-import { Card, CardHeader, CardContent, Avatar, CardMedia } from '@material-ui/core';
+import { Grid, FormRow, Card, CardHeader, CardContent, Avatar, CardMedia } from '@material-ui/core';
 
 class ShowcaseComponent extends Component {
 
@@ -16,11 +16,13 @@ class ShowcaseComponent extends Component {
   createStyles() {
     return {
       container: {
-        width: '250px',
-        margin: '0 auto',
+        margin: '20px 10%',
+      },
+      root: {
+        flexGrow: 1,
       },
       card: {
-        maxWidth: 345,
+        width: '250px',
         backgroundColor: '#EEE',
       },
       media: {
@@ -32,7 +34,7 @@ class ShowcaseComponent extends Component {
         height: '25px',
       },
       avatar: {
-        backgroundColor: '#ABC',
+        backgroundColor: '#CDE',
       },
       index: {
         color: '#222',
@@ -48,7 +50,7 @@ class ShowcaseComponent extends Component {
       index ++;
 
       topics.push(
-        <div style={styles.container} key={topic._id}>
+        <Grid item key={topic._id}>
           <Card style={styles.card}>
             <CardHeader
               avatar={
@@ -62,12 +64,12 @@ class ShowcaseComponent extends Component {
               subheader={texts.app}
             />
             <CardContent>
-              <h4>{topic.Name}</h4>
+              <p>{topic.Name}</p>
             </CardContent>
           </Card>
-        </div>
-        );
-      }
+        </Grid>
+      );
+    }
     
     return topics;
   }
@@ -78,8 +80,10 @@ class ShowcaseComponent extends Component {
     const topics = this.renderTopics(texts, styles);
     
     return (
-      <div>
-        {topics}
+      <div style={styles.container}>
+        <Grid container style={styles.root} spacing={2} justify='center'>
+          {topics}
+        </Grid>
       </div>
     );
   }
