@@ -1,92 +1,58 @@
 import React, { Component } from 'react';
-import { Container, Col, Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./LoginComponent.css";
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions';
 
 class LoginComponent extends Component {
-    constructor(props) {
-      super(props);
-        this.state = {
-        'email': '',
-        'password': '',
-        validate: {
-          emailState: '',
-        },
-      }
-      this.handleChange = this.handleChange.bind(this);
-    }
-  
-    validateEmail(e) {
-      const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      const { validate } = this.state
-        if (emailRex.test(e.target.value)) {
-          validate.emailState = 'has-success'
-        } else {
-          validate.emailState = 'has-danger'
-        }
-        this.setState({ validate })
-      }
-  
-    handleChange = async (event) => {
-      const { target } = event;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const { name } = target;
-      await this.setState({
-        [ name ]: value,
-      });
-    }
-  
-    submitForm(e) {
-      e.preventDefault();
-      console.log(`Email: ${ this.state.email }`)
-    }
-  
-
-    render() {
-      const { email, password } = this.state;
-      return (
-        <Container className="Login">
-          <h2>Iniciar Sesión</h2>
-          <Form className="form" onSubmit={ (e) => this.submitForm(e) }>
-            <Col>
-              <FormGroup>
-                <Label>Correo Electronico</Label>
-                <Input
-                  type="email"
-                  name="email"
-                  id="exampleEmail"
-                  placeholder="myemail@email.com"
-                  value={ email }
-                  valid={ this.state.validate.emailState === 'has-success' }
-                  invalid={ this.state.validate.emailState === 'has-danger' }
-                  onChange={ (e) => {
-                              this.validateEmail(e)
-                              this.handleChange(e)
-                            } }
-                />
-                <FormFeedback>
-                  Por favor ingresa un email válido.
-                </FormFeedback>
-              </FormGroup>
-            </Col>
-            <Col>
-              <FormGroup>
-                <Label for="examplePassword">Contraseña</Label>
-                <Input
-                  type="password"
-                  name="password"
-                  id="examplePassword"
-                  placeholder="********"
-                  value={ password }
-                  onChange={ (e) => this.handleChange(e) }
-              />
-              </FormGroup>
-            </Col>
-            <Button>Ingresar</Button>
-        </Form>
-        </Container>
-      );
-    }
+  state = {
+      email: '',
+      password: ''
   }
 
-  export default LoginComponent;
+  handleChange = (e) => {
+      this.setState({
+          [e.target.id]: e.target.value
+      })
+  }
+  handleSubmit = (e) => {
+      e.preventDefault();
+      this.props.signIn(this.state);
+  }
+
+  render() {
+      const { authError } = this.props;
+      return (
+          <div className="container">
+              <form onSubmit={this.handleSubmit}className="white">
+                  <h5 className="grey-text text-darken-3">Iniciar Sesión</h5>
+                  <div className="input-field">
+                      <label htmlFor="email">Email</label>
+                      <input type="email" id="email" onChange={this.handleChange}/>
+                  </div>
+                  <div className="input-field">
+                      <label htmlFor="password">Contraseña</label>
+                      <input type="password" id="password" onChange={this.handleChange}/>
+                  </div>
+                  <div className="input-field">
+                      <button className="btn blue lighten-1 z-depth-0">Ingresar</button>
+                      <div className="red-text center">
+                          { authError ? <p>{authError}</p> : null }
+                      </div>
+                  </div>
+              </form>
+          </div>
+      )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+      authError: state.auth.authError
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+      signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
