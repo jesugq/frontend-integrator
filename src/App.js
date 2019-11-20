@@ -1,30 +1,41 @@
+// Common imports.
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+// Project imports.
 import NavBarComponent from './components/global/NavBarComponent';
 import SideMenuComponent from './components/global/SideMenuComponent';
+import FooterComponent from './components/global/FooterComponent';
+import NotFoundComponent from './components/global/NotFoundComponent';
 
-import 'mdbreact/dist/css/mdb.css'
-import './App.css';
 import LoginComponent from './components/registry/LoginComponent';
 import SignUpComponent from './components/registry/SignUpComponent';
-import LandingComponent from './components/landing/LandingComponent';
-import FooterComponent from './components/global/FooterComponent';
 
-function App() {
+import LandingComponent from './components/landing/LandingComponent';
+
+// Project css.
+import './App.css';
+
+/**
+ * App is responsible for the routing of this application, using the
+ * BrowserRouter and Switch libraries provided by React Router DOM.
+ * All of components used for navigation have both the Navigation and
+ * Footer components attached to them.
+ */
+export default function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <NavBarComponent />
-        <Switch>
-          <Route exact path= '/' component={LandingComponent} /> 
-          <Route path='/login' component={LoginComponent} />
-          <Route path='/signup' component={SignUpComponent} />
-          <Route path='/profile' component={SideMenuComponent} />
-        </Switch>
-        <FooterComponent />
+      <NavBarComponent />
+      <Switch>
+        <Route lazy exact path='/' component={LandingComponent}/>
+        <Route lazy path='/login' component={LoginComponent}/>
+        <Route lazy path='/signup' component={SignUpComponent}/>
+        <Route lazy path='/profile' component={SideMenuComponent}/>
+        <Route lazy component={NotFoundComponent}/>
+      </Switch>
+      <div className="footer">
+        <FooterComponent/>
       </div>
-    </BrowserRouter>   
+    </BrowserRouter>
   );
 }
-
-export default App;

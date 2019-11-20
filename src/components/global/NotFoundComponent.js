@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NotFoundComponent extends Component {
   createTexts() {
     return({
-      notFound: 'Página no encontrada!'
+      notFound: '¡Página no encontrada!'
     });
   }
 
