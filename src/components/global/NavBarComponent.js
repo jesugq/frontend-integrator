@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoggedInLinks from './LoggedInLinks';
 import LoggedOutLinks from './LoggedOutLinks';
+import { connect } from 'react-redux';
+
 
 
 const NavBarComponent = () => {
@@ -16,5 +18,11 @@ const NavBarComponent = () => {
     )
 }
 
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
 
-export default NavBarComponent;
+    }
+}
+
+export default connect(mapStateToProps)(NavBarComponent);

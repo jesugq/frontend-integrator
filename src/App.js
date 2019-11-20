@@ -2,9 +2,8 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBarComponent from './components/global/NavBarComponent';
 import SideMenuComponent from './components/global/SideMenuComponent';
-
-import 'mdbreact/dist/css/mdb.css'
-import './App.css';
+/* import 'mdbreact/dist/css/mdb.css';
+import './App.css'; */
 import LoginComponent from './components/registry/LoginComponent';
 import SignUpComponent from './components/registry/SignUpComponent';
 import LandingComponent from './components/landing/LandingComponent';

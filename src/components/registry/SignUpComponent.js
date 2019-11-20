@@ -1,111 +1,73 @@
 import React, { Component } from 'react';
-import { Container, Col, Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./SignUpComponent.css";
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp } from '../../store/actions/authAction';
 
 class SignUpComponent extends Component {
-    constructor(props) {
-        super(props);
-            this.state = {
-            'name': '',
-            'phone': '',
-            'email': '',
-            'password': '',
-            validate: {
-                emailState: '',
-            },
-          }
-          this.handleChange = this.handleChange.bind(this);   
-        }
+    state = {
+        email: '',
+        password: '',
+        firstName: '',
+        lastName: ''
+    }
 
-    validateEmail(e) {
-        const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const { validate } = this.state
-          if (emailRex.test(e.target.value)) {
-            validate.emailState = 'has-success'
-          } else {
-            validate.emailState = 'has-danger'
-          }
-          this.setState({ validate })
-        }
-    
-      handleChange = async (event) => {
-        const { target } = event;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const { name } = target;
-        await this.setState({
-          [ name ]: value,
-        });
-      }
-    
-      submitForm(e) {
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`Email: ${ this.state.email }`)
-      }
+        this.props.signUp(this.state)
+    }
 
     render() {
-        const { email, password } = this.state;
+        const { auth, authError } = this.props;
+        if (auth.id) return <Redirect to='/' />
         return (
-            <Container className="SignUp">
-                <h2>Registrarse</h2>
-                <Form className="form">
-                    <Col>
-                        <FormGroup>
-                            <Label>Nombre</Label>
-                            <Input 
-                                type="text"
-                                name="nombre"
-                                id="exampleName"
-                                placeholder="Pantufla Baggins"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col>
-                        <FormGroup>
-                            <Label>Teléfono</Label>
-                            <Input
-                            type="number"
-                            name="telefono"
-                            id="examplePhone"
-                            placeholder="2222222222"
-                            />
-                        </FormGroup>
-                    </Col>
-                    <Col>
-                        <FormGroup>
-                            <Label>Correo Electrónico</Label>
-                            <Input
-                            type="email"
-                            name="email"
-                            id="exampleEmail"
-                            placeholder="myemail@email.com"
-                            value= { email }
-                            valid={ this.state.validate.emailState === 'has-success' }
-                            invalid={ this.state.validate.emailState === 'has-danger' }
-                            onChange={ (e) => {
-                                        this.validateEmail(e)
-                                        this.handleChange(e)
-                                      } }
-                            />
-                            <FormFeedback>Por favor ingresa un correo válido.</FormFeedback>
-                        </FormGroup>
-                    </Col>
-                    <Col>
-                        <FormGroup>
-                        <Label for="examplePassword">Contraseña</Label>
-                        <Input
-                        type="password"
-                        name="password"
-                        id="examplePassword"
-                        placeholder="********"
-                        />
-                        </FormGroup>
-                    </Col>
-                    <Button>Registrar</Button>
-                </Form>
-            </Container>
+            <div className="container">
+                <form onSubmit={this.handleSubmit}className="white">
+                    <h5 className="grey-text text-darken-3">Sign Up</h5>
+                    <div className="input-field">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="firstName">First Name</label>
+                        <input type="text" id="firstName" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input type="text" id="lastName" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <button className="btn blue lighten-1 z-depth-0">Sign Up</button>
+                        <div className="red-text center">
+                            { authError ? <p>{ authError }</p> : null}
+                        </div>
+                    </div>
+                </form>
+            </div>
         )
     }
 }
 
-export default SignUpComponent;
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth,
+        authError: state.auth.authError
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signUp: (newUser) => dispatch(signUp(newUser))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpComponent);
