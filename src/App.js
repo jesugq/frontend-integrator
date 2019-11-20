@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Project imports.
-import NavBarComponent from './components/global/NavBarComponent';
+import NavigationComponent from './components/global/NavigationComponent';
 import SideMenuComponent from './components/global/SideMenuComponent';
 import FooterComponent from './components/global/FooterComponent';
 import NotFoundComponent from './components/global/NotFoundComponent';
@@ -25,16 +25,16 @@ import './App.css';
 export default function App() {
   return (
     <BrowserRouter>
-      <NavBarComponent />
+      <NavigationComponent />
       <Switch>
-        <Route lazy exact path='/' component={LandingComponent}/>
-        <Route lazy path='/login' component={LoginComponent}/>
-        <Route lazy path='/signup' component={SignUpComponent}/>
-        <Route lazy path='/profile' component={SideMenuComponent}/>
-        <Route lazy component={NotFoundComponent}/>
+        <Route lazy exact path='/' component={LandingComponent} />
+        <Route lazy path='/login' component={LoginComponent} />
+        <Route lazy path='/signup' component={SignUpComponent} />
+        <Route lazy path='/profile' component={SideMenuComponent} />
+        <Route lazy component={NotFoundComponent} />
       </Switch>
       <div className="footer">
-        <FooterComponent/>
+        <FooterComponent />
       </div>
     </BrowserRouter>
   );

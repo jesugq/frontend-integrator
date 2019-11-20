@@ -1,25 +1,24 @@
+// Common imports.
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Layout, Menu } from 'antd';
 
-import NotFoundComponent from '../global/NotFoundComponent';
-import FooterComponent from '../global/FooterComponent';
-import LandingComponent from '../landing/LandingComponent';
-import LoginComponent from '../registry/LoginComponent';
-import SignUpComponent from '../registry/SignUpComponent';
-
+// Project imports.
+import LoggedInLinks from './LoggedInLinks';
 import logo from '../../images/aerobot.png';
 
+/**
+ * Navigation Component is the top bar shown. It is provided by Ant Design and
+ * calls to the other components via routing, which is present in the App
+ * Javascript file.
+ */
 class NavigationComponent extends Component {
-  createTexts() {
-    return({
-      app: 'EduApp',
-      landing: 'Inicio',
-      login: 'Ingresar',
-      register: 'Registrarse',
-    });
-  }
-
+  /**
+   * Creation of Styles as a Javascript Object. This is an alternative to the
+   * common practice of importing a CSS file and calling the classes from it
+   * using the className argument.
+   */
   createStyles() {
     return ({
       header: {
@@ -54,70 +53,47 @@ class NavigationComponent extends Component {
     });
   }
 
-  renderHeader(texts, styles) {
-    return(
-      <Layout.Header style={styles.header}>
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          style={styles.menu}
-        >
-          <Menu.Item style={styles.left}>
-            <img src={logo} width="50px" alt="Aerobot"/>
-          </Menu.Item>
-          <Menu.Item style={styles.left}>
-            <div style={styles.company}>{texts.app}</div>
-          </Menu.Item>
-          <Menu.Item style={styles.right} key="/">
-            <Link to="/">{texts.landing}</Link>
-          </Menu.Item>
-          <Menu.Item style={styles.right} key="/login">
-            <Link to="/login">{texts.login}</Link>
-          </Menu.Item>
-          <Menu.Item style={styles.right} key="/register">
-            <Link to="/register">{texts.register}</Link>
-          </Menu.Item>
-        </Menu>
-      </Layout.Header>
-    );
-  }
-
-  renderContent(styles) {
-    return(
-      <Layout.Content style={styles.content}>
-        <Switch>
-          <Route exact path='/' component={LandingComponent} lazy />
-          <Route path='/login' component={LoginComponent} lazy />
-          <Route path='/register' component={SignUpComponent} lazy />
-          <Route component={NotFoundComponent} />
-        </Switch>
-      </Layout.Content>
-    );
-  }
-
-  renderFooter() {
-    return(
-      <FooterComponent />
-    );
-  }
-
+  /**
+   * Render of the Navigation Component. After creating the styles, the
+   * Navigation Compponent calls to actions of navigation in a similar manner
+   * that other components such as LoggedInLinks or LoggedOutLinks do.
+   */
   render() {
-    const texts = this.createTexts();
     const styles = this.createStyles();
-    const header = this.renderHeader(texts, styles);
-    const content = this.renderContent(styles);
-    const footer = this.renderFooter();
 
     return (
-      <BrowserRouter>
-        <Layout>
-          {header}
-          {content}
-          {footer}
-        </Layout>
-      </BrowserRouter>
+      <Layout>
+        <Layout.Header style={styles.header}>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            style={styles.menu}
+          >
+            <Menu.Item style={styles.left}>
+              <img src={logo} width="50px" alt="Aerobot" />
+            </Menu.Item>
+            <Menu.Item style={styles.left}>
+              <div style={styles.company}>Aerobot Planet</div>
+            </Menu.Item>
+            <Menu.Item style={styles.right} key="/">
+              <Link to="/">Inicio</Link>
+            </Menu.Item>
+          </Menu>
+        </Layout.Header>
+      </Layout>
     );
   }
 }
-    
-export default NavigationComponent;
+
+/**
+ * Mapping the state of the props for use in Redux.
+ * @param state The state of the props. 
+ */
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    // Nothing here!
+  }
+}
+
+export default connect(mapStateToProps)(NavigationComponent);
