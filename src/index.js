@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 
 // Project imports.
@@ -24,9 +25,9 @@ import 'mdbreact/dist/css/mdb.css'
  */
 const store = createStore(rootReducer,
   compose(
-    applyMiddleware(
-      thunk.withExtraArgument({ getFirebase })
-    ), reactReduxFirebase(fbConfig)
+    applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
+    reduxFirestore(fbConfig),
+    reactReduxFirebase(fbConfig)
   )
 );
 
@@ -44,3 +45,4 @@ const render = (
 // ReactDOM presents the render, and serviceWorker is closed as it is not used.
 ReactDOM.render(render, document.getElementById('root'));
 serviceWorker.unregister();
+
