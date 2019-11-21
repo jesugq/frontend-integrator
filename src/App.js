@@ -25,13 +25,15 @@ import './App.css';
 export default function App() {
   return (
     <BrowserRouter>
-      <NavigationComponent />
+      <div className="nav-wrapper">
+        <NavigationComponent />
+      </div>
       <Switch>
-        <Route lazy exact path='/' component={LandingComponent} />
-        <Route lazy path='/login' component={LoginComponent} />
-        <Route lazy path='/signup' component={SignUpComponent} />
-        <Route lazy path='/profile' component={SideMenuComponent} />
-        <Route lazy component={NotFoundComponent} />
+          <Route lazy exact path='/' component={LandingComponent} />
+          <Route lazy path='/login' component={LoginComponent} />
+          <Route lazy path='/signup' component={SignUpComponent} />
+          <Route lazy path='/profile' component={SideMenuComponent} />
+          <Route lazy component={NotFoundComponent} />
       </Switch>
       <div className="footer">
         <FooterComponent />
