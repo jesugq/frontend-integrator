@@ -5,8 +5,8 @@ export const signIn = (credentials) => {
         firebase.auth().signInWithEmailAndPassword(
             credentials.email,
             credentials.password
-        ).then(() => {
-            dispatch({ type: 'LOGIN_SUCCESS' })
+        ).then((data) => {
+            dispatch({type: 'LOGIN_SUCCESS', data })
         }).catch((err) => {
             dispatch({ type: 'LOGIN_ERROR', err })
         });
@@ -38,8 +38,8 @@ export const signUp = (newUser) => {
                 lastName: newUser.lastName,
                 initial: newUser.firstName[0] + newUser.lastName[0]
             })
-        }).then(() => {
-            dispatch({ type: 'SIGNUP_SUCCESS'})
+        }).then((data) => {
+            dispatch({ type: 'SIGNUP_SUCCESS', data})
         }).catch(err => {
             dispatch({ type: 'SIGNUP_ERROR', err})
         })
