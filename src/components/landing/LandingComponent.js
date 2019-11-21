@@ -1,8 +1,10 @@
 // Common imports.
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Project imports.
-import { mockLanding, fetchLanding } from '../../services/LandingService';
+// import { mockLanding, fetchLanding } from '../../services/LandingService';
+import { fetchLanding } from '../../store/actions/landingAction';
 import CarouselComponent from './CarouselComponent';
 import QualitiesComponent from './QualitiesComponent';
 import ShowcaseComponent from './ShowcaseComponent';
@@ -13,42 +15,49 @@ import ShowcaseComponent from './ShowcaseComponent';
  */
 class LandingComponent extends Component {
 
-  // Abort Controller denies the fetch call if the component is unloaded.
-  abortController = new AbortController();
-
-  // Constructor calls Landing to be the mock version while the real one loads.
-  constructor(props) {
-    super(props);
-    this.state = {
-      landing: mockLanding(),
-    };
-    this.setStateLanding = this.setStateLanding.bind(this);
-  }
-
-  // This is the dispatch function sent to the service.
-  setStateLanding(landing, fetched){
-    this.setState({landing, fetched});
-  }
-
-  // Upon loading, the component calls for a fetch.
+  // The backend is immediately fetched upon loading this component.
   componentDidMount() {
-    fetchLanding(this.setStateLanding, this.abortController.signal);
+    this.props.fetchLanding();
   }
 
-  // Unpon unloading, the fetch call is cancelled.
-  componentWillUnmount() {
-    this.abortController.abort('Unmounted LandingComponent');
-  }
-
-  render (){
-    return(
+  /**
+   * Render of the Landing Component. It calls the subcomponents that comprise
+   * the Landing, such as the Carousel or the Qualities. For simplicity sake,
+   * the components only receive the data they require, while Landing gets
+   * all of the data for itself.
+   */
+  render() {
+    return (
       <div>
-        <CarouselComponent carousel={this.state.landing.Carrousel} />
-        <QualitiesComponent sections={this.state.landing.Sections} />
-        <ShowcaseComponent topics={this.state.landing.ShowcasedTopicsIDs} />
+        <CarouselComponent
+          carousel={this.props.landing.data.Carrousel} />
+        <QualitiesComponent
+          sections={this.props.landing.data.Sections} />
+        <ShowcaseComponent
+          topics={this.props.landing.data.ShowcasedTopicsIDs} />
       </div>
     );
   }
 }
-  
-export default LandingComponent;
+
+/**
+ * Mapping the state of the Redux store to the Props of Landing Component.
+ * @param {state} state 
+ */
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
+}
+
+/**
+ * Mapping the dispatch function to a local function in Landing Component.
+ * @param {dispatch} dispatch 
+ */
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchLanding: () => dispatch(fetchLanding()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingComponent);

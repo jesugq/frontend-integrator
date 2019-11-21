@@ -1,23 +1,10 @@
-const LANDING_URL = 'http://ing.pue.itesm.mx:8000/landingpages';
-
-export const fetchLanding = async(setStateLanding, signal) => {
-  fetch(LANDING_URL, { signal: signal })
-    .then(response => response.json())
-    .then(result => {
-      console.log('LandingService Succesful:', result);
-      setStateLanding(result, true);
-    })
-    .catch(error => {
-      console.log('Error found at LandingService:', error, signal);
-    });
-}
-
-export const mockLanding = function() {
-  return {
-    _id: 'afakelandingid',
-    LogoImgURL: 'http://via.placeholder.com/1920x1080',
-    Carrousel: [
-      'http://via.placeholder.com/1920x1080',
+const initState = {
+  fetched: false,
+  data: {
+      _id: 'afakelandingid',
+      LogoImgURL: 'http://via.placeholder.com/1920x1080',
+      Carrousel: [
+        'http://via.placeholder.com/1920x1080',
       'http://via.placeholder.com/1920x1080',
     ],
     ShowcasedTopicsIDs: [
@@ -59,5 +46,30 @@ export const mockLanding = function() {
     createdAt: '2019-10-03T20:37:42.753Z',
     updatedAt: '2019-10-03T20:37:42.753Z',
     _v: 1,
-  };
+  }
 }
+
+const landingReducer = (state = initState, action) => {
+  switch (action.type) {
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        fetched: true,
+        data: action.data,
+      }
+    case 'FETCH_FAILURE':
+      return {
+        ...state,
+        fetched: false,
+        data: initState.data,
+      }
+    default:
+      return {
+        ...state,
+        fetched: false,
+        data: initState.data,
+      }
+  }
+}
+
+export default landingReducer;

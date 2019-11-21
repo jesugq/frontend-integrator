@@ -22,7 +22,7 @@ import './App.css';
  * All of components used for navigation have both the Navigation and
  * Footer components attached to them.
  */
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <div className="nav-wrapper">
@@ -41,3 +41,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+export default App;
