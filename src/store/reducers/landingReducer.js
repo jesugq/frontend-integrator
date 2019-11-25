@@ -50,24 +50,23 @@ const initState = {
 }
 
 const landingReducer = (state = initState, action) => {
+  console.log('Action type is:', action);
   switch (action.type) {
-    case 'FETCH_SUCCESS':
+    case 'LANDING_SUCCESS':
       return {
         ...state,
         fetched: true,
-        data: action.data,
+        data: action.payload,
       }
-    case 'FETCH_FAILURE':
+    case 'LANDING_FAILURE':
       return {
         ...state,
         fetched: false,
-        data: initState.data,
       }
     default:
       return {
         ...state,
         fetched: false,
-        data: initState.data,
       }
   }
 }

@@ -50,7 +50,6 @@ class NavigationComponent extends Component {
    * that other components such as LoggedInLinks or LoggedOutLinks do.
    */
   render() {
-    console.log(this.props);
     return (
       <Layout>
         <Layout.Header>
