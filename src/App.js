@@ -24,21 +24,25 @@ import './App.css';
  */
 function App() {
   return (
-    <BrowserRouter>
-      <div className="nav-wrapper">
-        <NavigationComponent />
-      </div>
-      <Switch>
-          <Route lazy exact path='/' component={LandingComponent} />
-          <Route lazy path='/login' component={LoginComponent} />
-          <Route lazy path='/signup' component={SignUpComponent} />
-          <Route lazy path='/profile' component={SideMenuComponent} />
-          <Route lazy component={NotFoundComponent} />
-      </Switch>
-      <div className="footer">
-        <FooterComponent />
-      </div>
-    </BrowserRouter>
+    <div className="page-container">
+      <BrowserRouter>
+        <div className="nav-wrapper">
+          <NavigationComponent />
+        </div>
+        <div className="contentWrap">
+          <Switch>
+              <Route lazy exact path='/' component={LandingComponent} />
+              <Route lazy path='/login' component={LoginComponent} />
+              <Route lazy path='/signup' component={SignUpComponent} />
+              <Route lazy path='/profile' component={SideMenuComponent} />
+              <Route lazy component={NotFoundComponent} />
+          </Switch>
+        </div>
+        <div className="footer">
+          <FooterComponent />
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
 
