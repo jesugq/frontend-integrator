@@ -50,6 +50,7 @@ class NavigationComponent extends Component {
    * that other components such as LoggedInLinks or LoggedOutLinks do.
    */
   render() {
+    console.log(this.props);
     return (
       <Layout>
         <Layout.Header>
@@ -67,20 +68,34 @@ class NavigationComponent extends Component {
             <Menu.Item style={styles.right} key="/">
               <Link to="/">Inicio</Link>
             </Menu.Item>
-            <Menu.Item style={styles.right}>
-              <Link to="/login">Inicio de Sesión</Link>
-            </Menu.Item>
-            <Menu.Item style={styles.right}>
-              <Link to="/signup">Registro</Link>
-            </Menu.Item>
-            <Menu.Item style={styles.right} onClick={this.props.signOut}>
-              <Link to="/">Cerrar Sesión</Link>
-            </Menu.Item>
+            {this.props.auth.uid == null ? ([
+              <Menu.Item style={styles.right} key="login">
+                <Link to="/login">Inicio de Sesión</Link>
+              </Menu.Item>
+              ,
+              <Menu.Item style={styles.right} key="signup">
+                <Link to="/signup">Registro</Link>
+              </Menu.Item>
+            ]) : (
+              <Menu.Item style={styles.right} onClick={this.props.signOut}>
+               <Link to="/">Cerrar Sesión</Link>
+              </Menu.Item>
+            )}
           </Menu>
         </Layout.Header>
       </Layout>
     );
   }
+}
+
+/**
+ * Mapping the state of the Redux store to the Props of Landing Component.
+ * @param {state} state 
+ */
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  };
 }
 
 /**
@@ -93,4 +108,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(NavigationComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationComponent);
