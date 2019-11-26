@@ -4,8 +4,9 @@ import { firestoreReducer } from 'redux-firestore';
 import { firebaseReducer } from 'react-redux-firebase';
 
 // Project imports.
-import landingReducer from './landingReducer';
 import authReducer from './authReducer';
+import userReducer from './userReducer';
+import landingReducer from './landingReducer';
 
 /**
  * The root reducer allows for the web application to have access to all

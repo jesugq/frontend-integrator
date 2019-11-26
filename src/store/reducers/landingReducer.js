@@ -1,3 +1,8 @@
+/**
+ * The Initial State of the Landing Store. At first it starts with a state
+ * of fetched false, and placeholder data. Once an action type of 
+ * LANDING_SUCCESS is given, the state is updated to the payload content.
+ */
 const initState = {
   fetched: false,
   data: {
@@ -49,8 +54,15 @@ const initState = {
   }
 }
 
+/**
+ * Landing Reducer accepts two action types, LANDING_SUCCESS and
+ * LANDING_FAILURE, with the default behavior being the same as the failure one.
+ * Upon success, the placeholder data is replaced with the real server data, and
+ * upon failure, the placeholder stays.
+ * @param {state}   state   State of the Landing Store.
+ * @param {action}  action  Action that Redux is handling.
+ */
 const landingReducer = (state = initState, action) => {
-  console.log('Action type is:', action);
   switch (action.type) {
     case 'LANDING_SUCCESS':
       return {
@@ -61,12 +73,10 @@ const landingReducer = (state = initState, action) => {
     case 'LANDING_FAILURE':
       return {
         ...state,
-        fetched: false,
       }
     default:
       return {
         ...state,
-        fetched: false,
       }
   }
 }

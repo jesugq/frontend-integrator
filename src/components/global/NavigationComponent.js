@@ -75,11 +75,15 @@ class NavigationComponent extends Component {
               <Menu.Item style={styles.right} key="signup">
                 <Link to="/signup">Registro</Link>
               </Menu.Item>
-            ]) : (
-              <Menu.Item style={styles.right} onClick={this.props.signOut}>
+            ]) : ([
+              <Menu.Item style={styles.right} key="close" onClick={this.props.signOut}>
                <Link to="/">Cerrar Sesión</Link>
               </Menu.Item>
-            )}
+              ,
+              <Menu.Item style={styles.right} key="profile">
+                <Link to="/profile">Perfil</Link>
+              </Menu.Item>
+            ])}
           </Menu>
         </Layout.Header>
       </Layout>
