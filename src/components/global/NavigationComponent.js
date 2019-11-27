@@ -50,7 +50,6 @@ class NavigationComponent extends Component {
    * that other components such as LoggedInLinks or LoggedOutLinks do.
    */
   render() {
-    console.log(this.props);
     return (
       <Layout>
         <Layout.Header>
@@ -76,11 +75,15 @@ class NavigationComponent extends Component {
               <Menu.Item style={styles.right} key="signup">
                 <Link to="/signup">Registrar</Link>
               </Menu.Item>
-            ]) : (
-              <Menu.Item style={styles.right} onClick={this.props.signOut}>
+            ]) : ([
+              <Menu.Item style={styles.right} key="close" onClick={this.props.signOut}>
                <Link to="/">Cerrar Sesión</Link>
               </Menu.Item>
-            )}
+              ,
+              <Menu.Item style={styles.right} key="profile">
+                <Link to="/profile">Perfil</Link>
+              </Menu.Item>
+            ])}
           </Menu>
         </Layout.Header>  
       </Layout>
