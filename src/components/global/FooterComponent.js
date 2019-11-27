@@ -12,13 +12,13 @@ const FooterComponent = () => {
                 <a href="who">¿Quiénes Somos?</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 2</a>
+                <a href="terminos">Términos y Condiciones</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 3</a>
+                <a href="frequent">Preguntas Frecuentes</a>
               </li>
               <li className="list-unstyled">
-                <a href="#!">Link 4</a>
+                <a href="contact">Contáctanos</a>
               </li>
             </ul>
           </MDBCol>
@@ -26,7 +26,7 @@ const FooterComponent = () => {
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()}   : <a href="https://www.MDBootstrap.com"> Aerobot Planet </a>
+          &copy; {new Date().getFullYear()}   : <a href="https://www.aerobotplanet.com"> Aerobot Planet </a>
         </MDBContainer>
       </div>
     </MDBFooter>

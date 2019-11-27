@@ -20,7 +20,7 @@ const WhoComponent = () => {
             </h3>
             <h5 align="center">
             Incentivar a las nuevas generaciones a ser agentes de cambios pensando en mejorar su sociedad haciendo
-             uso de la tecnología y teniendo una visión global.
+             uso de la tecnología para poder buscar y/o brindar orientación académica en algún tema de interés, y teniendo una visión global.
 
             </h5>
 
@@ -28,7 +28,7 @@ const WhoComponent = () => {
                 Visión
             </h3>
             <h5 align="center">
-                Lograr un aprendizaje generando emociones positivas mediante experiencias vivenciales en el proceso de aprendizaje de Ciencias, Tecnología, Ingeniería, Artes y Matemáticas a través de nuestros numerosos programas como son nuestras academias estructuradas en distintos niveles. 
+                Lograr un aprendizaje generando emociones positivas mediante experiencias vivenciales en el proceso de aprendizaje de Ciencias, Tecnología, Ingeniería, Artes y Matemáticas a través de nuestros numerosos programas de "EduApp" en distintos niveles. 
             </h5>
 
             
