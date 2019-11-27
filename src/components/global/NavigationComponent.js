@@ -74,7 +74,7 @@ class NavigationComponent extends Component {
               </Menu.Item>
               ,
               <Menu.Item style={styles.right} key="signup">
-                <Link to="/signup">Registro</Link>
+                <Link to="/signup">Registrar</Link>
               </Menu.Item>
             ]) : (
               <Menu.Item style={styles.right} onClick={this.props.signOut}>
@@ -82,7 +82,7 @@ class NavigationComponent extends Component {
               </Menu.Item>
             )}
           </Menu>
-        </Layout.Header>
+        </Layout.Header>  
       </Layout>
     );
   }

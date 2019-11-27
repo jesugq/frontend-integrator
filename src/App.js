@@ -7,6 +7,7 @@ import NavigationComponent from './components/global/NavigationComponent';
 import SideMenuComponent from './components/global/SideMenuComponent';
 import FooterComponent from './components/global/FooterComponent';
 import NotFoundComponent from './components/global/NotFoundComponent';
+import WhoComponent from './components/global/WhoComponent';
 
 import LoginComponent from './components/registry/LoginComponent';
 import SignUpComponent from './components/registry/SignUpComponent';
@@ -35,6 +36,7 @@ function App() {
               <Route lazy path='/login' component={LoginComponent} />
               <Route lazy path='/signup' component={SignUpComponent} />
               <Route lazy path='/profile' component={SideMenuComponent} />
+              <Route lazy path='/who' component={WhoComponent} />
               <Route lazy component={NotFoundComponent} />
           </Switch>
         </div>
