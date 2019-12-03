@@ -46,17 +46,17 @@ class SignUpComponent extends Component {
                         <input type="text" id="name" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                    <label>
-                        Pick your favorite flavor:
-                        <select value={this.state.language} onChange={this.handleChange}>
-                            <option value="grapefruit">Grapefruit</option>
-                            <option value="lime">Lime</option>
-                            <option value="coconut">Coconut</option>
-                            <option value="mango">Mango</option>
-                        </select>
-                        </label>
+                        <label htmlFor="phone">Phone</label>
+                        <input type="number" id="phone" onChange={this.handleChange}/>
                     </div>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <div className="input-field">
+                        <label htmlFor="country">Country</label>
+                        <input type="text" id="country" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="language">Language</label>
+                        <input type="text" id="language" onChange={this.handleChange}/>
+                    </div>
                     <div className="input-field">
                         <button className="btn blue lighten-1 z-depth-0">Sign Up</button>
                         <div className="red-text center">

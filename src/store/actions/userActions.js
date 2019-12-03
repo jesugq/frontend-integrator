@@ -9,17 +9,15 @@ const USER_URL = 'http://localhost:8000/users';
  */
 export const createUser = (fields) => {
   const params = {
-    method: "POST",
-    body: fields,
-  }
-  console.log('Creating an user with fields:', fields);
-  
+    method: 'POST',
+    body: JSON.stringify(fields),
+  }  
   return (dispatch, getState) => {
     fetch(USER_URL, params)
       .then(response => response.json())
-      .then(result => {
-        console.log("User Creation Successful:", result);
-        dispatch({type: 'USER_CREATE_SUCCESS', payload: result});
+      .then(data => {
+        console.log("User Creation Successful:", data);
+        dispatch({type: 'USER_CREATE_SUCCESS', payload: data});
       })
       .catch(error => {
         console.log("User Creation Failure:", error);
@@ -40,9 +38,9 @@ export const fetchUser = (fields) => {
     var url = USER_URL.concat('/').concat(fields.uid);
     fetch(url)
       .then(response => response.json())
-      .then(result => {
-        console.log('User Fetch Successful:', result);
-        dispatch({type: 'USER_FETCH_SUCCESS', payload: result});
+      .then(data => {
+        console.log('User Fetch Successful:', data);
+        dispatch({type: 'USER_FETCH_SUCCESS', payload: data});
       })
       .catch(error => {
         console.log('User Fetch Failure:', error);
