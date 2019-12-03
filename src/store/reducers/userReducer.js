@@ -104,3 +104,5 @@ const userReducer = (state = initState, action) => {
       }
   }
 }
+
+export default userReducer;

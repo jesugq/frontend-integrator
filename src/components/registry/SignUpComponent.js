@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signUp } from '../../store/actions/authAction';
+import './SignUpComponent.css';
 
 class SignUpComponent extends Component {
     state = {
+        uid: null,
         email: '',
         password: '',
-        firstName: '',
-        lastName: ''
+        name: '',
+        phone: 0,
+        country: '',
+        language: '',
     }
 
     handleChange = (e) => {
@@ -38,13 +42,21 @@ class SignUpComponent extends Component {
                         <input type="password" id="password" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" id="firstName" onChange={this.handleChange}/>
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id="name" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="text" id="lastName" onChange={this.handleChange}/>
+                    <label>
+                        Pick your favorite flavor:
+                        <select value={this.state.language} onChange={this.handleChange}>
+                            <option value="grapefruit">Grapefruit</option>
+                            <option value="lime">Lime</option>
+                            <option value="coconut">Coconut</option>
+                            <option value="mango">Mango</option>
+                        </select>
+                        </label>
                     </div>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <div className="input-field">
                         <button className="btn blue lighten-1 z-depth-0">Sign Up</button>
                         <div className="red-text center">

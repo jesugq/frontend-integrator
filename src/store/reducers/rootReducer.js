@@ -14,6 +14,7 @@ import landingReducer from './landingReducer';
  */
 const rootReducer = combineReducers({
     auth: authReducer,
+    user: userReducer,
     landing: landingReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer

@@ -1,3 +1,5 @@
+import { createUser, fetchUser } from './userActions';
+
 export const signIn = (credentials) => {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
@@ -7,6 +9,7 @@ export const signIn = (credentials) => {
             credentials.password
         ).then((data) => {
             dispatch({type: 'LOGIN_SUCCESS', data })
+            dispatch(fetchUser({uid: data.user.uid}))
         }).catch((err) => {
             dispatch({ type: 'LOGIN_ERROR', err })
         });
@@ -40,7 +43,7 @@ export const signUp = (newUser) => {
             })
         }).then((data) => {
             dispatch({ type: 'SIGNUP_SUCCESS', data})
-            console.log(data);
+            dispatch(createUser({uid: data.user.uid}))
         }).catch(err => {
             dispatch({ type: 'SIGNUP_ERROR', err})
         })

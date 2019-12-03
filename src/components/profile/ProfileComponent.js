@@ -22,6 +22,7 @@ class ProfileComponent extends Component {
   * content which is pushed to the right as to not be offset by the sidebar.
   */
   render() {
+    console.log(this.props.user);
     return (
       <div>
         <BrowserRouter>
@@ -29,7 +30,9 @@ class ProfileComponent extends Component {
             <SideMenuComponent />
           </div>
           <div className="content">
-            <Route lazy exact path="/profile">Seleccione su opción.</Route>
+            <Switch>
+              <Route lazy exact path="/profile">Seleccione su opción.</Route>
+            </Switch>
           </div>
         </BrowserRouter>
       </div>
