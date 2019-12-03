@@ -46,7 +46,7 @@ class LandingComponent extends Component {
  */
 const mapStateToProps = (state) => {
   return {
-    ...state,
+    landing: state.landing,
   };
 }
 

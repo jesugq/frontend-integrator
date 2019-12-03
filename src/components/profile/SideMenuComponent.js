@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+
 
 const { SubMenu } = Menu;
 
@@ -23,8 +25,8 @@ class SideMenuComponent extends Component {
         <Menu
           theme={this.state.theme}
           onClick={this.handleClick}
-          style={{ width: 256 }}
-          defaultOpenKeys={['sub1']}
+          style={{ width: 256, height:800 }}
+          defaultOpenKeys={[]}
           selectedKeys={[this.state.current]}
           mode="inline"
         >
@@ -37,10 +39,18 @@ class SideMenuComponent extends Component {
               </span>
             }
           >
-            <Menu.Item key="1">Educación 1</Menu.Item>
-            <Menu.Item key="2">Habilidades</Menu.Item>
-            <Menu.Item key="3">Experiencia</Menu.Item>
-            <Menu.Item key="4">Reconocimientos</Menu.Item>
+            <Menu.Item key="1">
+              <Link to="/profile/person/education">Educación</Link>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Link to="/profile/person/habilities">Habilidades</Link>
+            </Menu.Item>
+            <Menu.Item key="3">
+              <Link to="/profile/person/experience">Experiencia</Link>
+            </Menu.Item>
+            <Menu.Item key="4">
+              <Link to="/profile/person/recognitions">Reconocimientos</Link>
+            </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
@@ -52,10 +62,14 @@ class SideMenuComponent extends Component {
             }
           >
            
-            <Menu.Item key="5">Historial</Menu.Item>
-            <Menu.Item key="6">Próximos</Menu.Item>
+            <Menu.Item key="5">
+              <Link to="/profile/advice/history">Historial</Link>
+            </Menu.Item>
+            <Menu.Item key="6">
+              <Link to="/profile/advice/next">Próximos</Link>
+            </Menu.Item>
           </SubMenu>
-          <SubMenu
+          {/* <SubMenu
             key="sub3"
             title={
               <span>
@@ -74,7 +88,7 @@ class SideMenuComponent extends Component {
                 </span>
             }
           >
-          </SubMenu>
+          </SubMenu> */}
         </Menu>
       </div>
     );

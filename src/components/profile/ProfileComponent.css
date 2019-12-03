@@ -1,0 +1,9 @@
+.sidebar {
+    position: absolute;
+    width: 256px;
+    height: 800px;
+}
+
+.content {
+    margin-left: 256px;
+}

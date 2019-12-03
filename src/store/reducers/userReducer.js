@@ -6,12 +6,68 @@
 const initState = {
   fetched: false,
   data: {
+    _id: null,
     uid: null,
-    email: '',
-    name: '',
-    phone: '',
-    country: '',
-    language: '',
+    email: 'afakeemail',
+    name: 'afakename',
+    phone: 0,
+    country: 'afakecountry',
+    language: 'afakelanguage',
+    tutorDetails: [
+      {
+        taughtTopicsIDs: [
+          'afaketaughttopicid',
+        ],
+        paymentAccounts: [
+          {
+            _id: 'afakepaymentaccountid',
+            method: 'afakepaymentmethod',
+          },
+        ],
+        skills: [
+          {
+            _id: 'afakeskillid',
+            topicid: 'afakeskilltopicid',
+            experience: 'afakeskillexperience',
+          }
+        ],
+        studies: [
+          {
+            _id: 'afakestudyid',
+            institution: 'afakestudyinstitution',
+            degree: 'afakestudydegree',
+            field: 'afakestudyfield',
+            grade: 0,
+            startDate: 'afakestudystartdate',
+            endDate: 'afakestudyenddate',
+            proofDocURL: 'afakestudyproofdocurl',
+            validationDate: 'afakestudyvalidationdate',
+          }
+        ],
+        certifications: [
+          {
+            _id: 'afakecertficationid',
+            institution: 'afakecertficationinstitution',
+            title: 'afakecertficationtitle',
+            date: 'afakecertficationdate',
+            diplomaURL: 'afakecertficationdiplomaurl',
+          }
+        ],
+        workExperiences: [
+          {
+            _id: 'afakeworkexperienceid',
+            institution: 'afakeworkexperienceinstitution',
+            department: 'afakeworkexperiencedepartment',
+            beginDate: 'afakeworkexperiencebegindate',
+            endDate: 'afakeworkexperienceenddate',
+            stillWorking: false,
+          }
+        ],
+        // Unused or unknown.
+        // awards: [],
+        // workExperience: []
+      }
+    ],
   }
 }
 
