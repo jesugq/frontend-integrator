@@ -2,13 +2,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ProfileCardComponent from '../SignedInComponents/ProfileCardComponent';
+import ProfileCardComponent from '../cardComponents/ProfileCardComponent';
 
 // Project imports.
 import SideMenuComponent from './SideMenuComponent';
 
 // Project css.
 import './ProfileComponent.css';
+import SkillsCardComponent from '../cardComponents/SkillsCardComponent';
+import WorkExperienceCardComponent from '../cardComponents/WorkExperienceCardComponent';
+import CertificationsCardComponent from '../cardComponents/CertificationsCardComponent';
 
 /**
 * Profile Component holds both the Side Menu, that will be controlling the
@@ -33,7 +36,10 @@ class ProfileComponent extends Component {
           <div className="content">
             <Switch>
               <Route lazy exact path="/profile">Seleccione su opción.</Route>
-              <Route lazy path="/profile/person/profileCard" component={ProfileCardComponent} />
+              <Route lazy path="/profile/person/profileCard"  component={ProfileCardComponent} />
+              <Route lazy path="/profile/person/habilities" component={SkillsCardComponent} />
+              <Route lazy path="/profile/person/experience" component={WorkExperienceCardComponent} />
+              <Route lazy path="/profile/person/certifications" component={CertificationsCardComponent} />
             </Switch>
           </div>
         </BrowserRouter>

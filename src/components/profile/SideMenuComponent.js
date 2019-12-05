@@ -49,7 +49,7 @@ class SideMenuComponent extends Component {
               <Link to="/profile/person/experience">Experiencia</Link>
             </Menu.Item>
             <Menu.Item key="4">
-              <Link to="/profile/person/recognitions">Reconocimientos</Link>
+              <Link to="/profile/person/certifications">Certificaciones</Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu
