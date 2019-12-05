@@ -40,7 +40,7 @@ class SideMenuComponent extends Component {
             }
           >
             <Menu.Item key="1">
-              <Link to="/profile/person/education">Educación</Link>
+              <Link to="/profile/person/profileCard">Información</Link>
             </Menu.Item>
             <Menu.Item key="2">
               <Link to="/profile/person/habilities">Habilidades</Link>

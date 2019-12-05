@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import { Card } from 'antd';
 
-class ProfileComponent extends Component {
+class ProfileCardComponent extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            name: 'Muffin Baggins',
-            email: 'muffin@gmail.com',
-            phone: '2223232323'
-         
+            userData: []         
         };
-    }
-
-    componentDidMount() {
-        fetch('')
-            .then(response => response.json())
-            .then(name => this.setState({ name }))
-            .then(email => this.setState({ email }))
     }
 
     render() {
@@ -26,7 +16,7 @@ class ProfileComponent extends Component {
                 <div className="row">
                     <div className="col s12 m6">
                         <div>
-                            <Card title="Perfil" style={{ width: 300 }}>
+                            <Card title="Información usuario" style={{ width: 300 }}>
                                 <p>Nombre: {this.state.name} </p>
                                 <p>Email: {this.state.email}</p>
                                 <p>No. Teléfono: {this.state.phone}</p>
@@ -40,4 +30,24 @@ class ProfileComponent extends Component {
     }
 }
 
-export default ProfileComponent;
+/**
+ * Mapping the state of the redux store to the props of this component.
+ * @param {state} state
+ */
+const mapStateToProps = (state) => {
+    return {
+      userData: state.user,
+    };
+  }
+  
+  /**
+   * Mapping the dispatch function to the props of this function.
+   * @param {dispatch} dispatch 
+   */
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      
+    };
+  }
+
+export default ProfileCardComponent;

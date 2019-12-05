@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ProfileCardComponent from '../SignedInComponents/ProfileCardComponent';
 
 // Project imports.
 import SideMenuComponent from './SideMenuComponent';
@@ -32,6 +33,7 @@ class ProfileComponent extends Component {
           <div className="content">
             <Switch>
               <Route lazy exact path="/profile">Seleccione su opción.</Route>
+              <Route lazy path="/profile/person/profileCard" component={ProfileCardComponent} />
             </Switch>
           </div>
         </BrowserRouter>
