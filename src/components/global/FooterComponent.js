@@ -38,7 +38,7 @@ const FooterComponent = () => {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <ul>
               <li className="list-unstyled">
-                <a href="https://www.facebook.com/AerobotPlanet/" class="fa fa-facebook"></a>
+                <a href="https://www.facebook.com/AerobotPlanet/" class="fa fa-facebook">Facebook</a>
               </li>
             </ul>
           </MDBCol>
@@ -46,7 +46,7 @@ const FooterComponent = () => {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <ul>
               <li className="list-unstyled">
-                <a href="https://www.youtube.com/channel/UCM_jToFCXMvhOcrvBzGqKAA" class="fa fa-youtube"></a>
+                <a href="https://www.youtube.com/channel/UCM_jToFCXMvhOcrvBzGqKAA" class="fa fa-youtube">Youtube</a>
               </li>
             </ul>
           </MDBCol>
@@ -54,7 +54,7 @@ const FooterComponent = () => {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <ul>
               <li className="list-unstyled">
-                <a href="https://mx.linkedin.com/company/aerobotplanet" class="fa fa-linkedin"></a>
+                <a href="https://mx.linkedin.com/company/aerobotplanet" class="fa fa-linkedin">LinkedIn</a>
               </li>
             </ul>
           </MDBCol>

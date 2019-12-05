@@ -1,5 +1,5 @@
 // URL of the server's users endpoints. Could use security protocols.
-const USER_URL = 'http://localhost:8000/users';
+const USER_URL = 'http://ing.pue.itesm.mx:8000/users';
 
 /**
  * Create User uses fetch's optional parameters argument to define the fetch
