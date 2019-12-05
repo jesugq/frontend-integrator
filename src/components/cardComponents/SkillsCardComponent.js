@@ -3,9 +3,6 @@ import { Card } from 'antd';
 import { connect } from 'react-redux';
 
 class SkillsCardComponent extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
@@ -14,8 +11,8 @@ class SkillsCardComponent extends Component {
                     <div className="col s12 m6">
                         <div>
                             <Card title="Habilidades" style={{ width: 300 }}>
-                                <p>Tema: {this.props.user.data.skills[0].topicid} </p>
-                                <p>Nivel de experiencia: {this.props.user.data.skills[0].experience}</p>
+                                <p>Tema: {this.props.user.data.tutorDetails.skills[0].topic} </p>
+                                <p>Nivel de experiencia: {this.props.user.data.tutorDetails.skills[0].experience}</p>
                             </Card>
                         </div>
                     </div>

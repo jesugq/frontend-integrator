@@ -26,7 +26,7 @@ const initState = {
       skills: [
         {
           _id: 'afakeskillid',
-          topicid: 'afakeskilltopicid',
+          topic: 'afakeskilltopic',
           experience: 'afakeskillexperience',
         }
       ],

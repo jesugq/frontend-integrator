@@ -3,9 +3,6 @@ import { connect } from 'react-redux';
 import { Card } from 'antd';
 
 class ProfileCardComponent extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         console.log(this.props);

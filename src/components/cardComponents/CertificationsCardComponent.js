@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import { Card } from 'antd';
 
 class CertificationsCardComponent extends Component {
-    constructor(props) {
-        super(props);
 
-    }
 
     render() {
         return (
