@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card } from 'antd';
 
 class CertificationsCardComponent extends Component {
@@ -6,7 +7,7 @@ class CertificationsCardComponent extends Component {
         super(props);
 
         this.state = {
-            userData: []         
+            user: []         
         };
     }
 
@@ -17,10 +18,10 @@ class CertificationsCardComponent extends Component {
                     <div className="col s12 m6">
                         <div>
                             <Card title="Certificaciones" style={{ width: 300 }}>
-                                <p>Institución: </p>
-                                <p>Título:</p>
-                                <p>Fecha:</p>
-                                <p>Diploma (URL):</p>
+                                <p>Institución: {this.props.user.tutorDetails.certifications[0].institution}</p>
+                                <p>Título: {this.props.user.tutorDetails.certifications[0].title}</p>
+                                <p>Fecha: {this.props.user.tutorDetails.certifications[0].date}</p>
+                                <p>Diploma (URL): {this.props.user.tutorDetails.certifications[0].diplomaURL}</p>
                             </Card>
                         </div>
                     </div>
@@ -37,18 +38,8 @@ class CertificationsCardComponent extends Component {
  */
 const mapStateToProps = (state) => {
     return {
-      userData: state.user,
+      user: state.user,
     };
-  }
-  
-  /**
-   * Mapping the dispatch function to the props of this function.
-   * @param {dispatch} dispatch 
-   */
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      
-    };
-  }
+}
 
-export default CertificationsCardComponent;
+export default connect(mapStateToProps, null)(CertificationsCardComponent);
