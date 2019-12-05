@@ -1,5 +1,5 @@
 // URL of the server's landing endpoint. Could use security protocols.
-const LANDING_URL = 'http://ing.pue.itesm.mx:8000/landingpages';
+const LANDING_URL = 'http://ing.pue.itesm:8000/landingpages';
 
 /**
  * Fetch Landing is a simple function to return the JSON depiction of the

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card } from 'antd';
 
 class WorkExperienceCardComponent extends Component {
@@ -14,10 +15,10 @@ class WorkExperienceCardComponent extends Component {
                     <div className="col s12 m6">
                         <div>
                             <Card title="Experiencia laboral" style={{ width: 300 }}>
-                                <p>Institución: {this.props.user.data.tutorDetails.workExperiences[0]}</p>
-                                <p>Departamento:{this.props.user.data.tutorDetails.workExperiences[1]}</p>
-                                <p>Fecha de inicio:{this.props.user.data.tutorDetails.workExperiences[2]}</p>
-                                <p>Fecha de terminación:{this.props.user.data.tutorDetails.workExperiences[3]}</p>
+                                <p>Institución: {this.props.user.data.tutorDetails.workExperiences[0].institution}</p>
+                                <p>Departamento:{this.props.user.data.tutorDetails.workExperiences[0].department}</p>
+                                <p>Fecha de inicio:{this.props.user.data.tutorDetails.workExperiences[0].beginDate}</p>
+                                <p>Fecha de terminación:{this.props.user.data.tutorDetails.workExperiences[0].endDate}</p>
                             </Card>
                         </div>
                     </div>
@@ -34,7 +35,7 @@ class WorkExperienceCardComponent extends Component {
  */
 const mapStateToProps = (state) => {
     return {
-      userData: state.user,
+      user: state.user,
     };
   }
   
