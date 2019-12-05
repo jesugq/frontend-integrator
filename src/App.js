@@ -9,7 +9,7 @@ import FooterComponent from './components/global/FooterComponent';
 import NotFoundComponent from './components/global/NotFoundComponent';
 import WhoComponent from './components/global/WhoComponent';
 import TerminosComponent from './components/global/TerminosComponent';
-import FrequentComponent from './components/global/FrequentComponent';
+import PrivacyComponent from './components/global/PrivacyComponent';
 import ContactComponent from './components/global/ContactComponent';
 import LoginComponent from './components/registry/LoginComponent';
 import SignUpComponent from './components/registry/SignUpComponent';
@@ -39,7 +39,7 @@ function App() {
               <Route lazy path='/profile' component={ProfileComponent} />
               <Route lazy path='/who' component={WhoComponent} />
               <Route lazy path='/terminos' component={TerminosComponent} />
-              <Route lazy path='/frequent' component={FrequentComponent} />
+              <Route lazy path='/privacy' component={PrivacyComponent} />
               <Route lazy path='/contact' component={ContactComponent} />
               <Route lazy component={NotFoundComponent} />
           </Switch>
