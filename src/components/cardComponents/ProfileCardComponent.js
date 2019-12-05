@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card } from 'antd';
 
 class ProfileCardComponent extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            userData: []         
-        };
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="dashboard container">
                 <div className="row">
                     <div className="col s12 m6">
                         <div>
                             <Card title="Información usuario" style={{ width: 300 }}>
-                                <p>Nombre: {this.state.name} </p>
-                                <p>Email: {this.state.email}</p>
-                                <p>No. Teléfono: {this.state.phone}</p>
+                                <p>Nombre: {this.props.user.data.name} </p>
+                                <p>Email: {this.props.user.data.email}</p>
+                                <p>No. Teléfono: {this.props.user.data.phone}</p>
                             </Card>
                         </div>
                     </div>
@@ -36,18 +34,8 @@ class ProfileCardComponent extends Component {
  */
 const mapStateToProps = (state) => {
     return {
-      userData: state.user,
-    };
-  }
-  
-  /**
-   * Mapping the dispatch function to the props of this function.
-   * @param {dispatch} dispatch 
-   */
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      
+      user: state.user,
     };
   }
 
-export default ProfileCardComponent;
+export default connect(mapStateToProps, null)(ProfileCardComponent);
